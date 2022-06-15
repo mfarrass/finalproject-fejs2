@@ -1,6 +1,10 @@
+import Navbar from "./Components/Navbar/Navbar";
+
 function App() {
   return (
-    <div className="flex justify-center items-center flex-col">
+    <>
+    <Navbar />
+    <div className="flex justify-center items-center flex-col mt-20">
       <h1 className="text-4xl">FEJS FINAL PROJECT</h1>
       <h1 className="text-4xl font-semibold">FEJS FINAL PROJECT 500</h1>
       <h1 className="text-4xl font-bold">FEJS FINAL PROJECT 700</h1>
@@ -12,6 +16,7 @@ function App() {
         Start
       </a>
     </div>
+    </>
   );
 }
 
