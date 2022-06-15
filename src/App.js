@@ -1,22 +1,25 @@
-import Navbar from "./Components/Navbar/Navbar";
 
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Seller from "./Pages/Seller/Seller";
+import Produk from "./Pages/Seller/Produk/Produk";
+import Terjual from "./Pages/Seller/Terjual/Terjual";
+import Diminati from "./Pages/Seller/Diminati/Diminati";
+import Navbar from './Components/Navbar/Navbar'
+import Home from './Pages/Home/Home'
 function App() {
   return (
-    <>
-    <Navbar />
-    <div className="flex justify-center items-center flex-col mt-20">
-      <h1 className="text-4xl">FEJS FINAL PROJECT</h1>
-      <h1 className="text-4xl font-semibold">FEJS FINAL PROJECT 500</h1>
-      <h1 className="text-4xl font-bold">FEJS FINAL PROJECT 700</h1>
-      <p>Hello Poppins</p>
-      <a
-        href="/"
-        className="px-3 py-2 bg-cyan-600 rounded text-gray-50 hover:bg-cyan-800 hover:text-gray-100"
-      >
-        Start
-      </a>
-    </div>
-    </>
+    <Routes>
+      <Route path="" element={<Navbar/>}>
+        <Route path="" element={<Home/>}/>
+        <Route path="/seller" element={<Seller />}>
+          <Route path="" element={<Produk />} />
+          <Route path="terjual" element={<Terjual />} />
+          <Route path="diminati" element={<Diminati />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 
