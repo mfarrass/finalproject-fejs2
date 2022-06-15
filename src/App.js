@@ -1,3 +1,5 @@
+import InfoProfil from "./Pages/InfoProfil/InfoProfil";
+
 function App() {
   return (
     <div className="flex justify-center items-center flex-col">
@@ -11,6 +13,7 @@ function App() {
       >
         Start
       </a>
+      <InfoProfil />
     </div>
   );
 }
