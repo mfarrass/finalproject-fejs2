@@ -14,20 +14,83 @@ function Seller() {
           <h1>Daftar Jual Saya</h1>
         </div>
 
-        {/* card nama penjual */}
+        {/* Card Profile Penjual */}
         <div className="flex p-6  shadow-md justify-between rounded-3xl">
           <div className="flex h-12">
             <img src={pf} alt="profile" />
             <div className="text-profil ml-5">
-              <h1 className="text-xl">Nama Penjual</h1>
-              <p className="text-sm text-gray-300">Kota</p>
+              <h1 className="text-sm md:text-xl">Nama Penjual</h1>
+              <p className="text-xs text-gray-300">Kota</p>
             </div>
           </div>
-          <button className="border border-purple-700 rounded-md px-9 py-1 hover:bg-purple-900 hover:text-white">
+          <button className="border border-purple-700 rounded-md sm:px-9 sm:py-1 h-10 px-4 hover:bg-purple-900 hover:text-white">
             Edit
           </button>
         </div>
-        {/* card nama penjual end */}
+        {/* Card Profile Penjual end */}
+
+        {/* Kategori Mobile */}
+        <div className=" md:hidden flex gap-3 mt-5 ml-3">
+          <Link to="/seller">
+            <div
+              className={`flex items-center gap-2 w-30 py-3 px-4 ${
+                location.pathname === "/seller"
+                  ? "bg-purple-700"
+                  : "bg-purple-300"
+              } rounded-xl`}
+            >
+              <BiCube color={location.pathname === "/seller" ? "#fff" : ""} />
+              <p
+                className={`${
+                  location.pathname === "/seller" ? "text-white" : ""
+                }`}
+              >
+                Produk
+              </p>
+            </div>
+          </Link>
+          <Link to="/seller/diminati">
+            <div
+              className={`flex items-center gap-2 w-30 py-3 px-4 ${
+                location.pathname === "/seller/diminati"
+                  ? "bg-purple-700"
+                  : "bg-purple-300"
+              } rounded-xl`}
+            >
+              <BiHeart
+                color={location.pathname === "/seller/diminati" ? "#fff" : ""}
+              />
+              <p
+                className={`${
+                  location.pathname === "/seller/diminati" ? "text-white" : ""
+                }`}
+              >
+                Diminati
+              </p>
+            </div>
+          </Link>
+          <Link to="/seller/terjual">
+            <div
+              className={`flex items-center gap-2 w-30 py-3 px-4 ${
+                location.pathname === "/seller/terjual"
+                  ? "bg-purple-700"
+                  : "bg-purple-300"
+              } rounded-xl`}
+            >
+              <BiCube
+                color={location.pathname === "/seller/terjual" ? "#fff" : ""}
+              />
+              <p
+                className={`${
+                  location.pathname === "/seller/terjual" ? "text-white" : ""
+                }`}
+              >
+                Terjual
+              </p>
+            </div>
+          </Link>
+        </div>
+        {/* Kategori Mobile */}
 
         {/* Kategori start */}
         <div className="md:flex mt-8 block">
