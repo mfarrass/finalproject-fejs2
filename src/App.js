@@ -1,20 +1,21 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Seller from "./Pages/Seller/Seller";
+import Produk from "./Pages/Seller/Produk/Produk";
+import Terjual from "./Pages/Seller/Terjual/Terjual";
+import Diminati from "./Pages/Seller/Diminati/Diminati";
 import InfoProfil from "./Pages/InfoProfil/InfoProfil";
 
 function App() {
   return (
-    <div className="flex justify-center items-center flex-col">
-      <h1 className="text-4xl">FEJS FINAL PROJECT</h1>
-      <h1 className="text-4xl font-semibold">FEJS FINAL PROJECT 500</h1>
-      <h1 className="text-4xl font-bold">FEJS FINAL PROJECT 700</h1>
-      <p>Hello Poppins</p>
-      <a
-        href="/"
-        className="px-3 py-2 bg-cyan-600 rounded text-gray-50 hover:bg-cyan-800 hover:text-gray-100"
-      >
-        Start
-      </a>
-      <InfoProfil />
-    </div>
+    <Routes>
+      <Route path="/seller" element={<Seller />}>
+        <Route path="" element={<Produk />} />
+        <Route path="terjual" element={<Terjual />} />
+        <Route path="diminati" element={<Diminati />} />
+      </Route>
+      <Route path="/infoprofil" element={<InfoProfil />}></Route>
+    </Routes>
   );
 }
 
