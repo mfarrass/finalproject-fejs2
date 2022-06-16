@@ -1,21 +1,14 @@
 import React from "react";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+import NavbarBack from "../../Components/NavbarBack/NavbarBack";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const InfoProduct = () => {
   return (
-    <form>
-      <div className="container mt-5 sm:min-w-full p-3">
-        <div className="container lg:ml-[341px] ml-5">
-          <button>
-            <AiOutlineArrowLeft size={42} />
-          </button>
-        </div>
-        <div className="container flex justify-center font-bold -mt-7 mb-5">
-          <p>Lengkapi Detail Produk</p>
-        </div>
+    <div className="container mt-5 sm:min-w-full p-3">
+      <NavbarBack>Lengkapi Data Produk</NavbarBack>
 
-        <div className="flex justify-center">
+      <div className="flex justify-center">
+        <form action="">
           <div className="container w-[568px] mt-[24px]">
             <p className="mb-1">Nama Produk*</p>
             <input
@@ -62,9 +55,9 @@ const InfoProduct = () => {
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 

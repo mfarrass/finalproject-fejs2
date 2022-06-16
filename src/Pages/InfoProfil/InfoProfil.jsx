@@ -1,27 +1,21 @@
 import React from "react";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+
+import NavbarBack from "../../Components/NavbarBack/NavbarBack";
 
 const InfoProfil = () => {
   return (
-    <form>
-      <div className="container mt-5 sm:min-w-full p-3">
-        <div className="container lg:ml-[341px]">
-          <button>
-            <AiOutlineArrowLeft size={42} />
-          </button>
-        </div>
-        <div className="container flex justify-center font-bold -mt-7 mb-5">
-          <p>Lengkapi Info Akun</p>
-        </div>
-        <div className="flex justify-center">
-          <button>
-            <img
-              src="https://i.gyazo.com/9a74bb3b374eddc5890cbe226035d818.png"
-              alt=""
-            />
-          </button>
-        </div>
-        <div className="flex justify-center">
+    <div className="container mt-5 sm:min-w-full p-3">
+      <NavbarBack>Lengkapi Info Akun</NavbarBack>
+      <div className="flex justify-center items-center">
+        <button>
+          <img
+            src="https://i.gyazo.com/9a74bb3b374eddc5890cbe226035d818.png"
+            alt=""
+          />
+        </button>
+      </div>
+      <div className="flex justify-center">
+        <form>
           <div className="container w-[568px] mt-[24px]">
             <p className="mb-1">Nama*</p>
             <input
@@ -56,9 +50,9 @@ const InfoProfil = () => {
               <p className="text-white">Simpan</p>
             </button>
           </div>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 
