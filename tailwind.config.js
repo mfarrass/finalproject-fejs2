@@ -11,7 +11,11 @@ module.exports = {
     fontFamily: {
       sans: ["Poppins", ...defaultTheme.fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        login: 'url("/src/Pages/Login/Assets/background-auth.png")',
+      },
+    },
   },
   plugins: [],
 };
