@@ -10,11 +10,14 @@ const InfoProfil = () => {
             <AiOutlineArrowLeft size={42} />
           </button>
         </div>
+        <div className="container flex justify-center font-bold -mt-7 mb-5">
+          <p>Lengkapi Info Akun</p>
+        </div>
         <div className="flex justify-center">
           <button>
             <img
               src="https://i.gyazo.com/9a74bb3b374eddc5890cbe226035d818.png"
-              alt="Icon Profile Picture"
+              alt=""
             />
           </button>
         </div>
