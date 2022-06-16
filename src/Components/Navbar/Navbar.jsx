@@ -1,7 +1,7 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
-import {Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const Navbar = () => {
     return (
