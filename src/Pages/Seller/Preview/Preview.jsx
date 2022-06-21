@@ -2,7 +2,7 @@ import React from "react";
 
 const Preview = () => {
   return (
-    <div>
+    <div className="float-center">
       <div className="container lg:w-full lg:flex lg:px-56 lg:mb-40">
         <div className="flex justify-center lg:flex">
           <div className="w-fill h-[360px] -mb-20 lg:mt-10">
@@ -64,8 +64,13 @@ const Preview = () => {
           </p>
         </div>
       </div>
-      <button className="w-[328px] h-[48px] bg-purple-700 sticky -ml-2 translate-x-2/4 bottom-10 rounded-2xl text-white lg:invisible">
+      <span className="text-white">a</span>
+      <button className="w-[160px] h-[48px] bg-purple-700 sticky ml-16 left-50% translate-x-2/4 bottom-10 rounded-2xl text-white lg:invisible">
         Terbitkan
+      </button>
+      <span className="text-white">a</span>
+      <button className="w-[160px] h-[48px] bg-white border-2 border-purple-700 left-50%  sticky translate-x-2/4 bottom-10 rounded-2xl text-purple-700 lg:invisible">
+        Edit
       </button>
     </div>
   );

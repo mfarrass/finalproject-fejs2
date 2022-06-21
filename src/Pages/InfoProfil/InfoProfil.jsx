@@ -23,19 +23,10 @@ const InfoProfil = () => {
               placeholder="Nama"
             />
             <p className="mb-1">Kota*</p>
-            <select
-              defaultValue={"Kota"}
-              name="kota"
-              id="kota"
+            <input
               className="mb-6 w-full h-[48px] shadow appearance-none text-gray-700 leading-tight rounded-2xl border-2 focus:outline-none focus:shadow-outline indent-3"
-            >
-              <option className="text-gray-700" value="Kota" disabled>
-                Pilih Kota
-              </option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
-            </select>
+              placeholder="Kota"
+            />
             <p className="mb-1">Alamat*</p>
             <input
               className="mb-6 w-full h-[80px] shadow appearance-none text-gray-700 leading-tight rounded-2xl border-2 focus:outline-none focus:shadow-outline indent-3"
