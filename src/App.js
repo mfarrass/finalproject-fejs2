@@ -9,6 +9,7 @@ import InfoProfil from "./Pages/InfoProfil/InfoProfil";
 import InfoProduct from "./Pages/InfoProduct/InfoProduct";
 import Daftar from "./Pages/Daftar/Daftar";
 import Preview from "./Pages/Seller/Preview/Preview";
+import HalamanProduct from "./Pages/Buyer/HalamanProduct";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/info-profil" element={<InfoProfil />}></Route>
       <Route path="/info-product" element={<InfoProduct />}></Route>
       <Route path="preview" element={<Preview />}></Route>
+      <Route path="buyerproduct" element={<HalamanProduct />}></Route>
     </Routes>
   );
 }
