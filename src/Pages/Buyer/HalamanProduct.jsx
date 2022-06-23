@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "../../Components/Modal/Modal";
+import Notifikasi from "../../Components/Notifikasi/Notifikasi";
 
 const HalamanProduct = () => {
   const [showModal, setShowModal] = useState(false);
@@ -33,7 +34,7 @@ const HalamanProduct = () => {
                     }}
                     className={`w-[304px] h-[48px] rounded-xl self-center ${
                       disableButton
-                        ? "bg-slate-600 text-white"
+                        ? "bg-slate-600 opacity-25 text-white"
                         : "bg-purple-700 text-white"
                     }`}
                     disabled={disableButton}
