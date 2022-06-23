@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
+
 const NavbarAuth = () => {
   const navigate = useNavigate();
   return (
