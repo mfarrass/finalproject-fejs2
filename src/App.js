@@ -1,4 +1,4 @@
-import {  Routes, Route } from "react-router-dom";
+import {  Routes, Route, } from "react-router-dom";
 import Seller from "./Pages/Seller/Seller";
 import Produk from "./Pages/Seller/Produk/Produk";
 import Terjual from "./Pages/Seller/Terjual/Terjual";
@@ -8,6 +8,10 @@ import InfoProfil from "./Pages/InfoProfil/InfoProfil";
 import InfoProduct from "./Pages/InfoProduct/InfoProduct";
 import Daftar from "./Pages/Daftar/Daftar";
 import Navbar from "./Components/Navbar/Navbar";
+import Banner from "./Pages/Home/Banner";
+
+
+
 
 
 function App() {
@@ -21,9 +25,10 @@ function App() {
           <Route path="terjual" element={<Terjual />} />
           <Route path="diminati" element={<Diminati />} />
         </Route>
-      </Route>
       <Route path="/info-profil" element={<InfoProfil />}></Route>
       <Route path="/info-product" element={<InfoProduct />}></Route>
+      <Route path="/banner" element={<Banner />}></Route>
+      </Route>
       
     </Routes>
   );
