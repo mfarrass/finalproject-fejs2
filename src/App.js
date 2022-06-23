@@ -10,7 +10,7 @@ import InfoProduct from "./Pages/InfoProduct/InfoProduct";
 import Daftar from "./Pages/Daftar/Daftar";
 import Preview from "./Pages/Seller/Preview/Preview";
 import HalamanProduct from "./Pages/Buyer/HalamanProduct";
-
+import SellerTawar from "./Pages/SellerTawar/SellerTawar";
 function App() {
   return (
     <Routes>
@@ -23,8 +23,9 @@ function App() {
       </Route>
       <Route path="/info-profil" element={<InfoProfil />}></Route>
       <Route path="/info-product" element={<InfoProduct />}></Route>
-      <Route path="preview" element={<Preview />}></Route>
-      <Route path="buyerproduct" element={<HalamanProduct />}></Route>
+      <Route path="/preview" element={<Preview />} />
+      <Route path="/buyer-product" element={<HalamanProduct />} />
+      <Route path="/seller-tawar" element={<SellerTawar />} />
     </Routes>
   );
 }
