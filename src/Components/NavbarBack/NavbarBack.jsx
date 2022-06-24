@@ -6,9 +6,7 @@ const NavbarBack = (props) => {
   const navigate = useNavigate();
   return (
     <>
-      <div
-        className={`container lg:ml-[341px] ml-5 flex items-center ${props.className}`}
-      >
+      <div className={`lg:ml-[341px] ml-2 ${props.className}`}>
         <button
           onClick={(e) => {
             navigate(-1);
@@ -18,7 +16,7 @@ const NavbarBack = (props) => {
           <AiOutlineArrowLeft size={42} />
         </button>
       </div>
-      <div className="container md:hidden  flex justify-center font-bold -mt-7 mb-5">
+      <div className="md:hidden  flex justify-center font-bold -mt-7 mb-5">
         <p>{props.children}</p>
       </div>
     </>
