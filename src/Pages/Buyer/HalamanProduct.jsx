@@ -10,24 +10,28 @@ const HalamanProduct = () => {
   const [disableButton, setDisableButton] = useState(false);
   return (
     <div>
-      <div class="relative h-auto w-full pb-5 pt-5">
-        <div class="md:grid md:grid-cols-2 md:gap-3 md:px-40">
-          <div class="flex justify-center">
-            <div class="h-[300px] w-[360px] md:h-[436px] md:w-[600px]">
+      {/**main container */}
+      <div className="relative h-auto w-full pb-5 pt-5 md:flex md:justify-center">
+        <div className="md:grid md:grid-cols-2 md:gap-3 md:px-40 xl:ml-60 lg:ml-32 ">
+          {/**container gambar utama */}
+          <div className="flex justify-center">
+            <div className="h-[300px] w-[360px] md:h-auto md:w-full">
               <img
                 src="./casio.png"
                 alt=""
-                className="h-[300px] w-[360px] md:h-[436px] md:w-[600px] rounded-2xl"
+                className="h-[300px] w-[360px] md:h-full md:w-full rounded-2xl"
               />
             </div>
           </div>
-          <div class="jam_tangan+penjual md:pt-8">
-            <div class="flex justify-center md:justify-start">
-              <div class="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg">
-                <div class="ml-3 grid w-[328px]">
+          {/**container nama barang dan penjual */}
+          <div className="jam_tangan+penjual md:pt-8">
+            <div className="flex justify-center md:justify-start">
+              <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg">
+                <div className="ml-3 grid w-[328px]">
                   <p className="font-semibold mt-3">Jam Tangan Casio</p>
                   <p className="text-xs font-thin mt-1 opacity-70">Aksesoris</p>
                   <p className="font-medium">Rp.250.000</p>
+                  {/**button modal desktop */}
                   <button
                     onClick={() => {
                       setShowModal(true);
@@ -46,17 +50,17 @@ const HalamanProduct = () => {
                 </div>
               </div>
             </div>
-            <div class="flex justify-center md:justify-start">
-              <div class="mx-4 mt-4 h-[80px] w-[328px] rounded-2xl border-2 md:h-[80px] md:w-[336px]">
-                <div class="flex w-[328px]">
-                  <div class="ml-3 mt-3 h-[48px] w-[48px]">
+            <div className="flex justify-center md:justify-start">
+              <div className="mx-4 mt-4 h-[80px] w-[328px] rounded-2xl border-2 md:h-[80px] md:w-[336px]">
+                <div className="flex w-[328px]">
+                  <div className="ml-3 mt-3 h-[48px] w-[48px]">
                     <img
                       src="./fotopenjual.png"
                       alt=""
                       className="h-[48px] w-full"
                     />
                   </div>
-                  <div class="mt-2 ml-4 grid w-full">
+                  <div className="mt-2 ml-4 grid w-full">
                     <p className="font-semibold">Nama Penjual</p>
                     <p className="font-thin text-xs opacity-70">Kota</p>
                   </div>
@@ -64,8 +68,9 @@ const HalamanProduct = () => {
               </div>
             </div>
           </div>
-          <div class="flex justify-center">
-            <div class="mt-4 p-3 h-auto w-[328px] border-2 rounded-2xl md:col-span-1 md:h-auto md:w-full">
+          {/**container deskripsi */}
+          <div className="flex justify-center">
+            <div className="mt-4 p-3 h-auto w-[328px] border-2 rounded-2xl md:col-span-1 md:h-auto md:w-full">
               <p className="font-semibold mt-2">Deskripsi</p>
               <p className="font-thin opacity-70 mt-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -84,11 +89,13 @@ const HalamanProduct = () => {
             </div>
           </div>
         </div>
-
-        <div class="sticky bottom-10 flex justify-center">
+        {/**button modal untuk mobile */}
+        <div className="sticky bottom-10 flex justify-center">
           <button
             onClick={() => setShowModal(true)}
-            class="mx-4 mt-4 text-white w-[328px] h-[48px] rounded-2xl bg-purple-600 md:hidden"
+            className={
+              "mx-4 mt-4 text-white w-[328px] h-[48px] rounded-2xl bg-purple-600 md:hidden"
+            }
           >
             Saya Tertarik dan Ingin Nego
           </button>
