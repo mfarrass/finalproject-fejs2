@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../../Components/Modal/Modal";
 import Notifikasi from "../../Components/Notifikasi/Notifikasi";
+import SwiperGambar from "../../Components/SwiperGambar/SwiperGambar";
 
 const HalamanProduct = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,18 +16,14 @@ const HalamanProduct = () => {
         <div className="md:grid md:grid-cols-2 md:gap-3 md:px-40 xl:ml-60 lg:ml-32 ">
           {/**container gambar utama */}
           <div className="flex justify-center">
-            <div className="h-[300px] w-[360px] md:h-auto md:w-full">
-              <img
-                src="./casio.png"
-                alt=""
-                className="h-[300px] w-[360px] md:h-full md:w-full rounded-2xl"
-              />
+            <div className="h-[300px] w-[360px] md:h-full md:w-full z-0">
+              <SwiperGambar />
             </div>
           </div>
           {/**container nama barang dan penjual */}
           <div className="jam_tangan+penjual md:pt-8">
             <div className="flex justify-center md:justify-start">
-              <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg">
+              <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg z-10">
                 <div className="ml-3 grid w-[328px]">
                   <p className="font-semibold mt-3">Jam Tangan Casio</p>
                   <p className="text-xs font-thin mt-1 opacity-70">Aksesoris</p>

@@ -1,4 +1,5 @@
 import React from "react";
+import SwiperGambar from "../../../Components/SwiperGambar/SwiperGambar";
 const Preview = () => {
   return (
     <div>
@@ -8,11 +9,12 @@ const Preview = () => {
           {/**container gambar utama */}
           <div className="flex justify-center">
             <div className="h-[300px] w-[360px] md:h-full md:w-full">
-              <img
+              {/* <img
                 src="./casio.png"
                 alt=""
                 className="h-[300px] w-[360px] md:h-full md:w-full rounded-2xl"
-              />
+              /> */}
+              <SwiperGambar />
             </div>
           </div>
           {/**container nama barang dan penjual */}
@@ -72,7 +74,7 @@ const Preview = () => {
             </div>
           </div>
         </div>
-        {/**button modal untuk mobile */}
+        {/**button untuk mobile */}
         <div className="sticky bottom-10 flex justify-center">
           <button className="mx-4 mt-4 text-white w-full h-[48px] rounded-2xl bg-purple-600 md:hidden">
             Terbitkan
