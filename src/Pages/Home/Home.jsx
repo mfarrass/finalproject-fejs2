@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
+import NavigationBar from './Components/NavigationBar'
 import Banner from './Components/Banner'
 import ButtonCategory from './Components/ButtonCategory'
 import ProductCard from './Components/ProductCard'
@@ -13,7 +14,7 @@ import Footer from './Components/Footer'
 const Dashboard = () => {
   return (
     <div className='min-h-screen bg-white'>
-     <NavbarIcon />
+     <NavigationBar />
     <Banner />
     <div className='mx-3 lg:mx-[200px]'>
         <h1 className='mb-3 mt-8 text-xl font-bold '>Telusuri Kategori</h1>
