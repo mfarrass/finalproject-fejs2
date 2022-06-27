@@ -1,77 +1,89 @@
 import React from "react";
-
+import SwiperGambar from "../../../Components/SwiperGambar/SwiperGambar";
 const Preview = () => {
   return (
-    <div className="float-center">
-      <div className="container lg:w-full lg:flex lg:px-56 lg:mb-40">
-        <div className="flex justify-center lg:flex">
-          <div className="w-fill h-[360px] -mb-20 lg:mt-10">
-            <img
-              src="./casio.png"
-              className="lg:w-[600px] lg:h-auto  rounded-2xl"
-              alt=""
-            />
+    <div>
+      {/**main container */}
+      <div className="relative h-auto w-full pb-5 pt-5">
+        <div className="md:grid md:grid-cols-2 md:gap-3 md:px-40 xl:ml-60 lg:ml-32">
+          {/**container gambar utama */}
+          <div className="flex justify-center">
+            <div className="h-[300px] w-[360px] md:h-full md:w-full">
+              {/* <img
+                src="./casio.png"
+                alt=""
+                className="h-[300px] w-[360px] md:h-full md:w-full rounded-2xl"
+              /> */}
+              <SwiperGambar />
+            </div>
           </div>
-        </div>
-        <div className="lg:mt-14 lg:ml-10">
-          <div className="flex justify-center container -mt-4">
-            <div className="w-[328px] h-[98px] lg:w-[336px] lg:h-[266px] rounded-2xl indent-4 p-1 bg-white border-2">
-              <div className="grid grid-rows-3 content-center mt-3">
-                <p className="font-semibold mt-1">Jam Tangan Casio</p>
-                <p className="text-xs font-thin mt-1 opacity-70">Aksesoris</p>
-                <p className="font-medium">Rp.250.000</p>
-                <div className="sm:invisible lg:visible lg:flex lg:flex-col lg:mt-5">
-                  <button className="w-[304px] h-[48px] bg-purple-700 text-white rounded-xl self-center">
+          {/**container nama barang dan penjual */}
+          <div className="jam_tangan+penjual md:pt-8">
+            <div className="flex justify-center md:justify-start">
+              <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-auto md:w-[336px] shadow-lg">
+                <div className="ml-3 grid w-[328px]">
+                  <p className="font-semibold mt-3">Jam Tangan Casio</p>
+                  <p className="text-xs font-thin mt-1 opacity-70">Aksesoris</p>
+                  <p className="font-medium">Rp.250.000</p>
+                  {/**button modal desktop */}
+                  <button className="w-[304px] h-[48px] rounded-xl invisible md:visible mt-10 px-3.5 hover:bg-purple-400 focus:scale-90 bg-purple-700 text-white">
                     Terbitkan
                   </button>
-                  <button className="w-[304px] h-[48px] border border-purple-700 text-black rounded-xl mt-3 self-center">
+                  <button className="w-[304px] h-[48px] rounded-xl invisible md:visible my-4 px-3.5 hover:bg-slate-300 focus:scale-90 bg-purple-white text-purple-700 border-2 border-purple-700">
                     Edit
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="flex justify-center container">
-            <div className="w-[328px] h-[80px] lg:w-[336px] rounded-2xl indent-3 p-1 bg-white mt-4 border-2">
-              <div className="flex">
-                <div class="flex-none">
-                  <img src="./fotopenjual.png" alt="" className="ml-3 my-2" />
-                </div>
-                <div className="flex flex-col my-2">
-                  <div class="flex-none font-semibold">Nama Penjual</div>
-                  <p className="font-thin text-xs mt-1 opacity-70">Kota</p>
+            <div className="flex justify-center md:justify-start">
+              <div className="mx-4 mt-4 h-[80px] w-[328px] rounded-2xl border-2 md:h-[80px] md:w-[336px]">
+                <div className="flex w-[328px]">
+                  <div className="ml-3 mt-3 h-[48px] w-[48px]">
+                    <img
+                      src="./fotopenjual.png"
+                      alt=""
+                      className="h-[48px] w-full"
+                    />
+                  </div>
+                  <div className="mt-2 ml-4 grid w-full">
+                    <p className="font-semibold">Nama Penjual</p>
+                    <p className="font-thin text-xs opacity-70">Kota</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          {/**container deskripsi */}
+          <div className="flex justify-center">
+            <div className="mt-4 p-3 h-auto w-[328px] border-2 rounded-2xl md:col-span-1 md:h-auto md:w-full">
+              <p className="font-semibold mt-2">Deskripsi</p>
+              <p className="font-thin opacity-70 mt-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                eget tincidunt elit. Praesent interdum ex magna, id tincidunt
+                felis elementum aliquam. Pellentesque quis odio quis diam
+                interdum commodo eu vel eros. Mauris facilisis sem ac nisl
+                ultrices consequat. Vestibulum feugiat odio non velit viverra
+                euismod. Maecenas a interdum enim. Suspendisse rhoncus bibendum
+                condimentum. Donec id quam id metus sollicitudin fermentum. Ut
+                imperdiet metus vitae ornare interdum. Fusce ac nisl dapibus,
+                suscipit augue vitae, sagittis enim. Sed non hendrerit dolor. Ut
+                non malesuada justo. Curabitur aliquam libero vitae ipsum
+                tristique iaculis eget ac neque. Sed feugiat augue eu ante
+                egestas luctus.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/**button untuk mobile */}
+        <div className="sticky bottom-10 flex justify-center">
+          <button className="mx-4 mt-4 text-white w-full h-[48px] rounded-2xl bg-purple-600 md:hidden">
+            Terbitkan
+          </button>
+          <button className="mx-4 mt-4 text-purple-700 border-2 border-purple-700 w-full h-[48px] rounded-2xl bg-white md:hidden">
+            Edit
+          </button>
         </div>
       </div>
-      <div className="flex justify-center lg:justify-start lg:ml-56 lg:mt-50">
-        <div className="w-[328px] h-auto lg:w-[600px] lg:h-auto rounded-2xl p-1 bg-white border-2 mt-4 container mb-14">
-          <p className="font-semibold ml-3 mt-2">Deskripsi</p>
-          <p className="font-thin opacity-70 ml-3 mt-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-            eget tincidunt elit. Praesent interdum ex magna, id tincidunt felis
-            elementum aliquam. Pellentesque quis odio quis diam interdum commodo
-            eu vel eros. Mauris facilisis sem ac nisl ultrices consequat.
-            Vestibulum feugiat odio non velit viverra euismod. Maecenas a
-            interdum enim. Suspendisse rhoncus bibendum condimentum. Donec id
-            quam id metus sollicitudin fermentum. Ut imperdiet metus vitae
-            ornare interdum. Fusce ac nisl dapibus, suscipit augue vitae,
-            sagittis enim. Sed non hendrerit dolor. Ut non malesuada justo.
-            Curabitur aliquam libero vitae ipsum tristique iaculis eget ac
-            neque. Sed feugiat augue eu ante egestas luctus.
-          </p>
-        </div>
-      </div>
-      <span className="text-white">a</span>
-      <button className="w-[160px] h-[48px] bg-purple-700 sticky ml-16 left-50% translate-x-2/4 bottom-10 rounded-2xl text-white lg:invisible">
-        Terbitkan
-      </button>
-      <span className="text-white">a</span>
-      <button className="w-[160px] h-[48px] bg-white border-2 border-purple-700 left-50%  sticky translate-x-2/4 bottom-10 rounded-2xl text-purple-700 lg:invisible">
-        Edit
-      </button>
     </div>
   );
 };
