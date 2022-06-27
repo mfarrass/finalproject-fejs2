@@ -21,19 +21,33 @@ const InfoProduct = () => {
               placeholder="Harga Produk"
             />
             <p className="mb-1">Kategori*</p>
-            <select
-              defaultValue={"Kategori"}
-              name="kota"
-              id="kota"
-              className="mb-6 w-full h-[48px] shadow appearance-none text-gray-700 leading-tight rounded-2xl border-2 focus:outline-none focus:shadow-outline indent-3"
-            >
-              <option className="text-gray-700" value="Kota" disabled>
-                Pilih Kategori
-              </option>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
-            </select>
+            <div className="flex mb-6 max-w-[568px]">
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-gray-600"
+              />
+              <span class="ml-1 text-gray-700">Kat 1</span>
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-gray-600 ml-2"
+              />
+              <span class="ml-1 text-gray-700">Kat 2</span>
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-gray-600 ml-2"
+              />
+              <span class="ml-1 text-gray-700">Kat 3</span>
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-gray-600 ml-2"
+              />
+              <span class="ml-1 text-gray-700">Kat 4</span>
+              <input
+                type="checkbox"
+                class="form-checkbox h-5 w-5 text-gray-600 ml-2"
+              />
+              <span class="ml-1 text-gray-700">Kat 5</span>
+            </div>
             <p className="mb-1">Deskripsi*</p>
             <input
               className="mb-6 w-full h-[80px] shadow appearance-none text-gray-700 leading-tight rounded-2xl border-2 focus:outline-none focus:shadow-outline indent-3"
