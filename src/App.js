@@ -24,6 +24,7 @@ function App() {
       {/* <Route path="/" element={<Navbar />}> */}
       {/* <Route path="/" element={<Sidebar />}> */}
       <Route path="/" element={<Home />}>
+      </Route>
         <Route path="/seller" element={<Seller />}>
           <Route path="" element={<Produk />} />
           <Route path="terjual" element={<Terjual />} />
@@ -32,7 +33,6 @@ function App() {
       <Route path="/info-profil" element={<InfoProfil />}></Route>
       <Route path="/info-product" element={<InfoProduct />}></Route>
       <Route path="/banner" element={<Banner />}></Route>
-      </Route>
       <Route path="/preview" element={<Preview />} />
       <Route path="/buyer-product" element={<HalamanProduct />} />
       <Route path="/seller-tawar" element={<SellerTawar />} />

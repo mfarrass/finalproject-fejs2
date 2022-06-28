@@ -1,11 +1,12 @@
 import React from 'react'
-import Navbar from './Components/Navbar'
-import NavigationBar from './Components/NavigationBar'
+// import Navbar from './Components/Navbar'
+// import NavigationBar from './Components/NavigationBar'
 import Banner from './Components/Banner'
 import ButtonCategory from './Components/ButtonCategory'
 import ProductCard from './Components/ProductCard'
 import ButtonAdd from './Components/ButtonAdd'
 import NavbarIcon from './Components/NavbarIcon'
+import BoxNotification from './Components/BoxNotification'
 import Footer from './Components/Footer'
 
 
@@ -14,7 +15,7 @@ import Footer from './Components/Footer'
 const Dashboard = () => {
   return (
     <div className='min-h-screen bg-white'>
-     <NavigationBar />
+     <NavbarIcon />
     <Banner />
     <div className='mx-3 lg:mx-[200px]'>
         <h1 className='mb-3 mt-8 text-xl font-bold '>Telusuri Kategori</h1>
@@ -34,6 +35,7 @@ const Dashboard = () => {
           <ProductCard />
         </div>
       </div>
+      <BoxNotification />
           <ButtonAdd />
           <Footer />
     </div>
