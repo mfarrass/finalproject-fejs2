@@ -12,7 +12,7 @@ const HalamanProduct = () => {
   return (
     <div>
       {/**main container */}
-      <div className="relative h-auto w-full pb-5 pt-5 md:flex md:justify-center">
+      <div className="relative h-auto w-full pb-5 pt-5 md:flex md:justify-center md:mt-16">
         <div className="md:grid md:grid-cols-2 md:gap-3 md:px-40 xl:ml-60 lg:ml-32 ">
           {/**container gambar utama */}
           <div className="flex justify-center">

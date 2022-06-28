@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 
 const CategoryButton = () => {
   return (
-    <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 flex overflow-x-auto whitespace-nowrap">
+    <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  flex overflow-x-auto whitespace-nowrap">
       <div class="container flex flex-wrap justify-between items-center mx-auto">
         <div class="w-full md:block md:w-auto" id="mobile-menu">
           <ul class="flex flex-auto gap-6">
@@ -89,7 +89,6 @@ const CategoryButton = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 
