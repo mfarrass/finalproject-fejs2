@@ -10,10 +10,10 @@ const Navbar = () => {
       <div className="mt-20 absolute z-10 ">
         <div className="fixed top-0 left-0 h-16 -mb-20 bg-white w-full shadow-none sm:shadow">
           <div className="container m-auto p-3 flex justify-between items-center text-gray-700">
-            <Link
-              to="/"
-              className="shadow-md md:block hidden mt-2 w-28 h-8 bg-purple-700 hover:bg-purple-200 lg:mt-0"
-            ></Link>
+          <Link
+              to="/">
+              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0"/>
+            </Link>
             <div className="flex-1 relative mx-5 text-gray-600">
               <form>
                 <label>
@@ -35,11 +35,11 @@ const Navbar = () => {
             <div className="flex md:block hidden">
               <Link
                 to="/login"
-                className="shadow-md block text-md text-center w-28 h-10 py-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0"
+                className="shadow-md block text-md w-28 h-10 py-2 mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0"
               >
                 {" "}
-                <span className="px-2">
-                  <FiLogIn className="absolute z-10 text-center mx-5 mt-1" />
+                <span className="px-5">
+                  <FiLogIn className="inline-block absolute z-10 text-center mt-1" />
                 </span>
                 Masuk
               </Link>
@@ -53,16 +53,16 @@ const Navbar = () => {
             group-focus:right-0 group-focus:opacity-100 transition-all duration-300"
               >
                 <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
-                  <Link
-                    to="/login"
-                    className="shadow-md mb-5 block text-md text-center w-28 h-10 py-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-blue-700 hover:font-bold lg:mt-0"
-                  >
-                    {" "}
-                    <span className="px-2">
-                      <FiLogIn className="absolute z-10 text-center mx-5 mt-1" />
-                    </span>
-                    Masuk
-                  </Link>
+                <Link
+                to="/login"
+                className="shadow-md block text-md w-28 h-10 py-2 mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0"
+              >
+                {" "}
+                <span className="px-5">
+                  <FiLogIn className="inline-block absolute z-10 text-center mt-1" />
+                </span>
+                Masuk
+              </Link>
                   {/* <li className="mb-5">ads</li>
                     <li className="mb-5">ads</li>
                     <li className="mb-5">ads</li> */}

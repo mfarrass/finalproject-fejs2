@@ -7,7 +7,7 @@ const Card = (props) => {
       <div className="h-50 shadow-md rounded-sm py-2 px-2 border-red-900">
         <div className="w-full flex justify-center">
           <img
-            className="w rounded hover:scale-90 ease-in duration-100 hover:opacity"
+            className="w rounded hover:scale-90 ease-in duration-100 hover:opacity-50"
             src={props.img}
             alt="product"
           />

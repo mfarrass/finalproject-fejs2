@@ -22,7 +22,7 @@ const HalamanProduct = () => {
           {/**container nama barang dan penjual */}
           <div className="jam_tangan+penjual md:pt-8">
             <div className="flex justify-center md:justify-start">
-              <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg z-10">
+              <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg">
                 <div className="ml-3 grid w-[328px]">
                   <p className="font-semibold mt-3">Jam Tangan Casio</p>
                   <p className="text-xs font-thin mt-1 opacity-70">Aksesoris</p>

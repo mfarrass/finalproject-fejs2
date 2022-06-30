@@ -1,10 +1,11 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineBell } from "react-icons/ai";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+// import { AiOutlineArrowLeft } from "react-icons/ai";
 import { MdFormatListBulleted } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -21,18 +22,12 @@ const Navbar = () => {
                 }}
                 className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
               >
-                <span className="px-2">
-                  <AiOutlineArrowLeft
-                    fontSize="20px"
-                    className="absolute z-10 text-center mx-3 inline-block"
-                  />
-                </span>
               </button>
             </div>
             <Link
-              to="/"
-              className="md:block hidden mt-2 w-28 h-8 bg-purple-700 hover:bg-blue-700 lg:mt-0"
-            ></Link>
+              to="/">
+              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0"/>
+            </Link>
             <div className="flex-1 relative mx-5 text-gray-600">
               <form>
                 <label>
@@ -93,6 +88,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </div>
+            <BoxNotification />
             <button className="block sm:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
@@ -101,14 +97,17 @@ const Navbar = () => {
                 className="absolute top-0 -right-full h-screen w-8/12 bg-white border opacity-0
             group-focus:right-0 group-focus:opacity-100 transition-all duration-300"
               >
-                <ul className="flex-col items-center p-8 text-black w-full text-base cursor-pointer pt-10 inline">
-                  <li className="mb-5 hover:bg-purple-700 hover:text-white">
+                <ul className="flex flex-col items-center p-8 text-black w-full text-base cursor-pointer pt-10">
+                <div className="w-32 mb-10">
+                <img src="/Imgs/second-hand-logo2.png" alt="logo" />
+                </div>
+                  <li className="mb-5 hover:bg-purple-700 hover:text-white inline">
                     Products
                   </li>
-                  <li className="mb-5 hover:bg-purple-700 hover:text-white">
+                  <li className="mb-5 hover:bg-purple-700 hover:text-white inline">
                     Notifikasi
                   </li>
-                  <li className="mb-5 hover:bg-purple-700 hover:text-white">
+                  <li className="mb-5 hover:bg-purple-700 hover:text-white inline">
                     Akun
                   </li>
                 </ul>

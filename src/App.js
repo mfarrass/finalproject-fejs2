@@ -13,6 +13,7 @@ import HalamanProduct from "./Pages/Buyer/HalamanProduct";
 import SellerTawar from "./Pages/SellerTawar/SellerTawar";
 import Home from "./Pages/Home/Home";
 import NavbarIcon from "./Components/NavbarIcon/NavbarIcon";
+// import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import Auth from "./Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import authSlice from "./Features/authSlice";
