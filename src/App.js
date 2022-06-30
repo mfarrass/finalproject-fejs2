@@ -26,14 +26,14 @@ function App() {
         <Route path="/info-profil" element={<InfoProfil />} />
         <Route path="/buyer-product" element={<HalamanProduct />} />
         <Route path="/preview" element={<Preview />} />
-        <Route path="seller-tawar" element={<SellerTawar />} />
+        <Route path="/seller-tawar" element={<SellerTawar />} />
+        <Route path="/info-product" element={<InfoProduct />} />
         <Route path="/seller" element={<Seller />}>
           <Route path="" element={<Produk />} />
           <Route path="terjual" element={<Terjual />} />
           <Route path="diminati" element={<Diminati />} />
         </Route>
       </Route>
-      <Route path="/info-product" element={<InfoProduct />} />
     </Routes>
   );
 }

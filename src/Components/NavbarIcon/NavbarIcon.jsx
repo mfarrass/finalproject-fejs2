@@ -53,7 +53,7 @@ const Navbar = () => {
             </div>
             <div className="flex sm:block hidden">
               <Link
-                to="#"
+                to="/seller"
                 className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
               >
                 {" "}
@@ -81,7 +81,7 @@ const Navbar = () => {
             </div>
             <div className="flex sm:block hidden">
               <Link
-                to="#"
+                to="/info-profil"
                 className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
               >
                 {" "}
@@ -103,7 +103,7 @@ const Navbar = () => {
               >
                 <ul className="flex-col items-center p-8 text-black w-full text-base cursor-pointer pt-10 inline">
                   <li className="mb-5 hover:bg-purple-700 hover:text-white">
-                    ini apa ya
+                    Products
                   </li>
                   <li className="mb-5 hover:bg-purple-700 hover:text-white">
                     Notifikasi

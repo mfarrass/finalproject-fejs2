@@ -1,14 +1,10 @@
 import React from "react";
-import NavbarBack from "../../Components/NavbarBack/NavbarBack";
+
 import TambahGambar from "../../Components/TambahGambar/TambahGambar";
 
 const InfoProduct = () => {
   return (
-    <div className="relative mt-3 h-auto w-full p-3">
-      <NavbarBack />
-      <div className="flex justify-center">
-        <p className="text-2xl mb-20 -mt-8">Lengkapi Info Produk</p>
-      </div>
+    <div className="relative mt-24 h-auto w-full p-3">
       {/*Body Form */}
       <div className="flex justify-center">
         <form action="">
