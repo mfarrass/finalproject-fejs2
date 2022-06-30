@@ -16,10 +16,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "swiper": "^8.2.4",
-<<<<<<< HEAD
     "tailwind-scrollbar-hide": "^1.1.7",
-=======
->>>>>>> bae8ce1b291faac54a66f61a97093efaa598e298
     "web-vitals": "^2.1.4"
   },
   "scripts": {

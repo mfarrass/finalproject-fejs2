@@ -5,7 +5,7 @@ import Card from "../../../Components/Card/Card";
 const Produk = () => {
   return (
     <div className="md:flex-1 grid grid-cols-2 gap-6 px-2 md:grid-cols-3 md:px-0">
-      <Link to="#">
+      <Link to="/info-product">
         <div className="flex h-48 items-center justify-center rounded-2xl border border-dashed border-slate-300 p-5 shadow-sm">
           <div className="w-full">
             <div className="flex justify-center text-3xl font-bold">+</div>

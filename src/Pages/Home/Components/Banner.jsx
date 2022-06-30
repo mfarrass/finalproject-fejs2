@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 const Banner = () => {
   return (
@@ -17,8 +17,9 @@ const Banner = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay  ]}
         className="mySwiper"
+        autoplay={true}
       >
         <SwiperSlide>
           <img src="/Imgs/banner1.png" alt="" />
