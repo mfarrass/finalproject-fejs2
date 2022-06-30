@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "../../Components/Modal/Modal";
-import Notifikasi from "../../Components/Notifikasi/Notifikasi";
 import SwiperGambar from "../../Components/SwiperGambar/SwiperGambar";
 
 const HalamanProduct = () => {

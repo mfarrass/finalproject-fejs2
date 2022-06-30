@@ -13,30 +13,27 @@ const Produk = () => {
           </div>
         </div>
       </Link>
-      <Link to="#">
-        <Card
-          nama="Sepatu Converse"
-          kategori="Sepatu"
-          harga="250.000"
-          img="https://media.suara.com/pictures/970x544/2021/03/12/43016-sepatu-sneakers-dok-instagramaxwearapparel.jpg"
-        />
-      </Link>
-      <Link to="#">
-        <Card
-          nama="Sepatu Converse"
-          kategori="Sepatu"
-          harga="250.000"
-          img="https://media.suara.com/pictures/970x544/2021/03/12/43016-sepatu-sneakers-dok-instagramaxwearapparel.jpg"
-        />
-      </Link>
-      <Link to="#">
-        <Card
-          nama="Sepatu Converse"
-          kategori="Sepatu"
-          harga="250.000"
-          img="https://media.suara.com/pictures/970x544/2021/03/12/43016-sepatu-sneakers-dok-instagramaxwearapparel.jpg"
-        />
-      </Link>
+
+      <Card
+        nama="Sepatu Converse"
+        kategori="Sepatu"
+        harga="250.000"
+        img="https://media.suara.com/pictures/970x544/2021/03/12/43016-sepatu-sneakers-dok-instagramaxwearapparel.jpg"
+      />
+
+      <Card
+        nama="Sepatu Converse"
+        kategori="Sepatu"
+        harga="250.000"
+        img="https://media.suara.com/pictures/970x544/2021/03/12/43016-sepatu-sneakers-dok-instagramaxwearapparel.jpg"
+      />
+
+      <Card
+        nama="Sepatu Converse"
+        kategori="Sepatu"
+        harga="250.000"
+        img="https://media.suara.com/pictures/970x544/2021/03/12/43016-sepatu-sneakers-dok-instagramaxwearapparel.jpg"
+      />
     </div>
   );
 };

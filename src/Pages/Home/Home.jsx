@@ -1,19 +1,15 @@
 import React from "react";
-// import Navbar from './Components/Navbar'
-// import NavigationBar from "../../Components/NavigationBar/NavigationBar";
+
 import Banner from "./Components/Banner";
 import ButtonCategory from "./Components/ButtonCategory";
 import ProductCard from "./Components/ProductCard";
 import ButtonAdd from "./Components/ButtonAdd";
-import NavbarIcon from "../../Components/NavbarIcon/NavbarIcon";
-import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 import Footer from "../../Components/Footer/Footer";
 import Card from "../../Components/Card/Card";
 
-const Dashboard = () => {
+const Home = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* <NavbarIcon /> */}
       <Banner />
       <div className="mx-3 lg:mx-[200px]">
         <h1 className="mb-3 mt-8 text-xl font-bold ">Telusuri Kategori</h1>
@@ -100,4 +96,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Home;
