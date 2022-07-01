@@ -18,7 +18,7 @@ const BoxNotification = () => {
       </button>
         <Link
     to="/">
-    <div className="mt-1 px-6 py-3 rounded-lg shadow w-full">
+    <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
       <div className=" inline-flex items-center justify-between w-full"> 
         <div className="inline-flex items-center">
           <img
@@ -46,7 +46,7 @@ const BoxNotification = () => {
       </Link>
       <Link
     to="/">
-    <div className="mt-2 px-6 py-4 bg-white rounded-lg shadow w-full">
+    <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
       <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
         <div className="inline-flex items-center">
           <img
@@ -71,7 +71,7 @@ const BoxNotification = () => {
     </Link>
     <Link
     to="/">
-    <div className="mt-2 px-6 py-4 bg-white rounded-lg shadow w-full">
+    <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
       <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
         <div className="inline-flex items-center">
           <img
@@ -82,7 +82,7 @@ const BoxNotification = () => {
         </p>
         </div>
         <p className="text-xs text-gray-500">
-          19 Apr, 12:00
+          18 Apr, 12:00
         </p>
         <span class="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
       </div>
@@ -96,7 +96,7 @@ const BoxNotification = () => {
     </Link>
     <Link
     to="/">
-    <div className="mt-2 px-6 py-4 bg-white rounded-lg shadow w-full">
+    <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
       <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
         <div className="inline-flex items-center">
           <img
@@ -107,7 +107,7 @@ const BoxNotification = () => {
         </p>
         </div>
         <p className="text-xs text-gray-500">
-          19 Apr, 12:00
+          17 Apr, 12:00
         </p>
         <span class="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
       </div>
@@ -121,7 +121,7 @@ const BoxNotification = () => {
     </Link>
     <Link
     to="/">
-    <div className="mt-2 px-6 py-4 bg-white rounded-lg shadow w-full">
+    <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
       <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
         <div className="inline-flex items-center">
           <img
@@ -132,7 +132,7 @@ const BoxNotification = () => {
         </p>
         </div>
         <p className="text-xs text-gray-500">
-          19 Apr, 12:00
+          16 Apr, 12:00
         </p>
         <span class="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
       </div>

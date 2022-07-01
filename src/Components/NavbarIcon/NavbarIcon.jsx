@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
             <Link
               to="/">
-              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0"/>
+              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0 hover:shadow-sm focus:outline-none transform active:scale-50 transition-transform duration-300"/>
             </Link>
             <div className="flex-1 relative mx-5 text-gray-600">
               <form>
@@ -42,7 +42,7 @@ const Navbar = () => {
                     type="submit"
                     className="absolute right top-0 mt-3 -ml-8 "
                   >
-                    <BsSearch className="text-gray-600 h-4 w-4 fill-current" />
+                    <BsSearch className="text-gray-600 hover:text-purple-700 h-4 w-4 fill-current" />
                   </button>
                 </label>
               </form>
@@ -50,14 +50,14 @@ const Navbar = () => {
             <div className="flex sm:block hidden">
               <Link
                 to="/"
-                className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
+                className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
                 <span className="px-2">
                   <AiOutlineStar
                     onclick="document.bgColor='lightyellow'"
                     fontSize="23px"
-                    className="inline-block absolute z-10 text-center"
+                    className="inline-block absolute z-10 text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </Link>
@@ -65,13 +65,13 @@ const Navbar = () => {
             <div className="flex sm:block hidden">
               <Link
                 to="/seller"
-                className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
+                className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
                 <span className="px-2">
                   <MdFormatListBulleted
                     fontSize="22px"
-                    className="inline-block absolute z-10 text-center"
+                    className="inline-block absolute z-10 text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </Link>
@@ -79,13 +79,13 @@ const Navbar = () => {
             <div className="flex sm:block hidden">
               <Link
                 to="#"
-                className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
+                className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
                 <span className="px-2">
                   <AiOutlineBell
                     fontSize="22px"
-                    className="absolute z-10 text-center inline-block"
+                    className="absolute z-10 text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </Link>
@@ -93,18 +93,18 @@ const Navbar = () => {
             <div className="flex sm:block hidden">
               <Link
                 to="/info-profil"
-                className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
+                className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
                 <span className="px-2">
                   <VscAccount
                     fontSize="22px"
-                    className="absolute z-10 text-center inline-block"
+                    className="absolute z-10 text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </Link>
             </div>
-            <BoxNotification />
+            {/* <BoxNotification /> */}
             <button className="block sm:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>

@@ -8,7 +8,7 @@ const CategoryButton = () => {
         <div className="w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-auto gap-6">
             <li className="text-white hover:text-gray-700">
-              <button className="shadow-md toggle rounded-xl flex p-2.5 text-right bg-purple-700 hover:bg-purple-200">
+              <button className="shadow-md toggle rounded-xl flex p-2.5 text-right bg-purple-700 hover:bg-purple-200 focus:outline-none transform active:scale-50 transition-transform duration-300">
                 <BsSearch className="h-4 w-4 fill-current" />
                 <span
                   className="iconify mt-1 mr-1"
@@ -18,7 +18,7 @@ const CategoryButton = () => {
               </button>
             </li>
             <li className="hover:text-white">
-              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  hover rounded-xl">
+              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  hover rounded-xl focus:outline-none transform active:scale-50 transition-transform duration-300">
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
                   className="iconify mt-1 mr-1"
@@ -28,7 +28,7 @@ const CategoryButton = () => {
               </button>
             </li>
             <li className="hover:text-white">
-              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl">
+              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700 rounded-xl focus:outline-none transform active:scale-50 transition-transform duration-300">
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
                   className="iconify mt-1 mr-1"
@@ -40,7 +40,7 @@ const CategoryButton = () => {
             <li className="hover:text-white">
               <button
                 href="#"
-                className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl"
+                className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700 rounded-xl focus:outline-none transform active:scale-50 transition-transform duration-300"
               >
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
@@ -51,7 +51,7 @@ const CategoryButton = () => {
               </button>
             </li>
             <li className="hover:text-white">
-              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl">
+              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700 rounded-xl focus:outline-none transform active:scale-50 transition-transform duration-300">
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
                   className="iconify mt-1 mr-1"
@@ -61,7 +61,7 @@ const CategoryButton = () => {
               </button>
             </li>
             <li className="hover:text-white">
-              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl">
+              <button className="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700 rounded-xl focus:outline-none transform active:scale-50 transition-transform duration-300">
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
                   className="iconify mt-1 mr-1"

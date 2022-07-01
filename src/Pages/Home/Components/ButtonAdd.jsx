@@ -3,7 +3,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const ButtonAdd = () => {
   return (
-    <div className="sticky m-auto bottom-8 w-28 -mt-24 z-20">
+    <div className="sticky m-auto bottom-8 w-28 -mt-24 z-20 focus:outline-none transform active:scale-50 transition-transform duration-300">
       <Link
         to="/info-product"
         className="shadow-lg toggle rounded-lg flex justify-center p-2.5 text-white hover:text-gray-700 bg-purple-700 hover:bg-purple-200"

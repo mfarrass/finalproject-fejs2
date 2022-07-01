@@ -90,7 +90,7 @@ const Home = () => {
         </div>
       </div>
       {/* <BoxNotification /> */}
-      <ButtonAdd className="flex right-0"/>
+      <ButtonAdd />
       <Footer />
     </div>
   );

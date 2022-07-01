@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className="container m-auto p-3 flex justify-between items-center text-gray-700">
           <Link
               to="/">
-              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0"/>
+              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"/>
             </Link>
             <div className="flex-1 relative mx-5 text-gray-600">
               <form>
@@ -55,7 +55,7 @@ const Navbar = () => {
                 <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
                 <Link
                 to="/login"
-                className="shadow-md block text-md w-28 h-10 py-2 mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0"
+                className="shadow-md block text-md w-28 h-10 py-2 mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
               >
                 {" "}
                 <span className="px-5">

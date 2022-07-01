@@ -5,7 +5,7 @@ const Card = (props) => {
   return (
     <Link to="/buyer-product">
       <div className="h-50 shadow-md rounded-sm py-2 px-2 border-red-900">
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center focus:outline-none transform active:scale-75 transition-transform duration-300">
           <img
             className="w rounded hover:scale-90 ease-in duration-100 hover:opacity-50"
             src={props.img}

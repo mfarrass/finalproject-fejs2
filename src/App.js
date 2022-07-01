@@ -13,6 +13,7 @@ import HalamanProduct from "./Pages/Buyer/HalamanProduct";
 import SellerTawar from "./Pages/SellerTawar/SellerTawar";
 import Home from "./Pages/Home/Home";
 import NavbarIcon from "./Components/NavbarIcon/NavbarIcon";
+import NotifikasiDesktop from "./Pages/NotiifikasiDesktop/NotifikasiDesktop";
 // import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import Auth from "./Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +21,7 @@ import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -46,6 +48,7 @@ function App() {
             <Route path="/info-profil" element={<InfoProfil />} />
             <Route path="/buyer-product" element={<HalamanProduct />} />
             <Route path="/preview" element={<Preview />} />
+            <Route path="/notifikasi-desktop" element={<NotifikasiDesktop />} />
             <Route path="/seller-tawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
             <Route path="/seller" element={<Seller />}>
