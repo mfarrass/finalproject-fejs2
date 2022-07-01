@@ -2,7 +2,7 @@ import React from "react";
 
 import Banner from "./Components/Banner";
 import ButtonCategory from "./Components/ButtonCategory";
-import ProductCard from "./Components/ProductCard";
+// import ProductCard from "./Components/ProductCard";
 import ButtonAdd from "./Components/ButtonAdd";
 import Footer from "../../Components/Footer/Footer";
 import Card from "../../Components/Card/Card";
@@ -90,7 +90,7 @@ const Home = () => {
         </div>
       </div>
       {/* <BoxNotification /> */}
-      <ButtonAdd />
+      <ButtonAdd className="flex right-0"/>
       <Footer />
     </div>
   );

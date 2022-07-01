@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <>
       <div className="mt-20 absolute z-10 ">
-        <div className="fixed top-0 left-0 h-16 -mb-20 bg-white w-full shadow-none sm:shadow">
+        <div className="fixed top-0 left-0 h-16 -mb-25 bg-white w-full shadow-none sm:shadow">
           <div className="container m-auto p-3 flex justify-between items-center text-gray-700">
           <Link
               to="/">
