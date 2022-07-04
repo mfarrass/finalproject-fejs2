@@ -27,11 +27,17 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    API.get(`/buyers/products/?page=1&size=12`, {
-      headers: {
-        Authorization: user ? user.access_token : null,
-      },
-    })
+    setError("");
+    API.get(
+      `/buyers/products/?page=1&size=12&category=${
+        category === null ? "" : category
+      }`,
+      {
+        headers: {
+          Authorization: user ? user.access_token : null,
+        },
+      }
+    )
       .then((res) => {
         setLoading(false);
         setProducts(res.data.data);
