@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import Modal from "../../Components/Modal/Modal";
 import SwiperGambar from "../../Components/SwiperGambar/SwiperGambar";
 
 const HalamanProduct = () => {
   const [showModal, setShowModal] = useState(false);
+  const { productId } = useParams();
   const handleOnClose = () => setShowModal(false);
-
+  console.log(productId);
   const [disableButton, setDisableButton] = useState(false);
   return (
     <div>

@@ -43,7 +43,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route element={<Auth />}>
             <Route path="/info-profil" element={<InfoProfil />} />
-            <Route path="/buyer-product" element={<HalamanProduct />} />
+            <Route path="/buyer-product/:productId" element={<HalamanProduct />} />
             <Route path="/preview" element={<Preview />} />
             <Route path="/seller-tawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
