@@ -19,6 +19,7 @@ import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Wishlist from "./Pages/Wishlist/Wishlist";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -43,7 +44,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route element={<Auth />}>
             <Route path="/info-profil" element={<InfoProfil />} />
-            <Route path="/buyer-product/:productId" element={<HalamanProduct />} />
+            <Route
+              path="/buyer-product/:productId"
+              element={<HalamanProduct />}
+            />
             <Route path="/preview" element={<Preview />} />
             <Route path="/seller-tawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
@@ -52,6 +56,7 @@ function App() {
               <Route path="terjual" element={<Terjual />} />
               <Route path="diminati" element={<Diminati />} />
             </Route>
+            <Route path="wishlist" element={<Wishlist />} />
           </Route>
         </Route>
       </Routes>
