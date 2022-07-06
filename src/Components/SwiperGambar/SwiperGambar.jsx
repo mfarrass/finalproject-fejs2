@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
-export default function SwiperGambar() {
+export default function SwiperGambar(props) {
   return (
     <div>
       {/**swiper setting */}
@@ -20,8 +20,6 @@ export default function SwiperGambar() {
         autoplay={true}
         navigation
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
       >
         {/**swiper content */}
         <SwiperSlide>
