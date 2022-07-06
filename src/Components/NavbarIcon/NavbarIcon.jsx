@@ -10,7 +10,7 @@ import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [toggleNotif, setToggleNotif]=useState(false)
+  const [toggleNotif, setToggleNotif] = useState(false);
   return (
     <>
       <div className="mt-20 absolute z-10">
@@ -58,7 +58,6 @@ const Navbar = () => {
                 {" "}
                 <span className="px-2">
                   <AiOutlineStar
-                    onclick="document.bgColor='lightyellow'"
                     fontSize="23px"
                     className="inline-block absolute z-10 text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
@@ -81,7 +80,7 @@ const Navbar = () => {
             </div>
             <div className="flex sm:block hidden">
               <button
-              onClick={()=>setToggleNotif(true)}
+                onClick={() => setToggleNotif(true)}
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
@@ -94,8 +93,8 @@ const Navbar = () => {
               </button>
             </div>
             <div className="flex sm:block hidden">
-              <Link
-                to="/info-profil"
+              <button
+                onClick={() => setToggleNotif(true)}
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
@@ -105,9 +104,9 @@ const Navbar = () => {
                     className="absolute z-10 text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
-              </Link>
+              </button>
             </div>
-            <BoxNotification state ={toggleNotif} setState={setToggleNotif}/>
+            <BoxNotification state={toggleNotif} setState={setToggleNotif} />
             <button className="block sm:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
@@ -124,9 +123,9 @@ const Navbar = () => {
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                 </div>
