@@ -34,7 +34,7 @@ const Home = () => {
       }`,
       {
         headers: {
-          Authorization: user ? user.access_token : null,
+          Authorization: user ? user.access_token : "",
         },
       }
     )
