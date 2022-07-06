@@ -17,7 +17,7 @@ const Banner = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination, Navigation, Autoplay  ]}
+        modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
         autoplay={true}
       >

@@ -21,6 +21,7 @@ import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Wishlist from "./Pages/Wishlist/Wishlist";
 
 
 function App() {
@@ -46,7 +47,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route element={<Auth />}>
             <Route path="/info-profil" element={<InfoProfil />} />
-            <Route path="/buyer-product" element={<HalamanProduct />} />
+            <Route
+              path="/buyer-product/:productId"
+              element={<HalamanProduct />}
+            />
             <Route path="/preview" element={<Preview />} />
             <Route path="/notifikasi-desktop" element={<NotifikasiDesktop />} />
             <Route path="/seller-tawar" element={<SellerTawar />} />
@@ -56,6 +60,7 @@ function App() {
               <Route path="terjual" element={<Terjual />} />
               <Route path="diminati" element={<Diminati />} />
             </Route>
+            <Route path="wishlist" element={<Wishlist />} />
           </Route>
         </Route>
       </Routes>

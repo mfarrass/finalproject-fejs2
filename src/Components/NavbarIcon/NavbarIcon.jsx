@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineBell } from "react-icons/ai";
 import { AiOutlineStar } from "react-icons/ai";
@@ -10,6 +10,7 @@ import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [toggleNotif, setToggleNotif]=useState(false)
   return (
     <>
       <div className="mt-20 absolute z-10">
@@ -22,12 +23,14 @@ const Navbar = () => {
                   e.preventDefault();
                 }}
                 className="block text-md text-center w-10 h-10 py-2 text-black lg:mt-0"
-              >
-              </button>
+              ></button>
             </div>
-            <Link
-              to="/">
-              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0 hover:shadow-sm focus:outline-none transform active:scale-50 transition-transform duration-300"/>
+            <Link to="/">
+              <img
+                src="/Imgs/second-hand-logo2.png"
+                alt=""
+                className="md:block hidden mt-2 w-18 h-10 lg:mt-0 hover:shadow-sm focus:outline-none transform active:scale-50 transition-transform duration-300"
+              />
             </Link>
             <div className="flex-1 relative mx-5 text-gray-600">
               <form>
@@ -77,8 +80,8 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex sm:block hidden">
-              <Link
-                to="#"
+              <button
+              onClick={()=>setToggleNotif(true)}
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
@@ -88,7 +91,7 @@ const Navbar = () => {
                     className="absolute z-10 text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
-              </Link>
+              </button>
             </div>
             <div className="flex sm:block hidden">
               <Link
@@ -104,7 +107,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </div>
-            {/* <BoxNotification /> */}
+            <BoxNotification state ={toggleNotif} setState={setToggleNotif}/>
             <button className="block sm:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
@@ -114,16 +117,23 @@ const Navbar = () => {
             group-focus:right-0 group-focus:opacity-100 transition-all duration-300"
               >
                 <div className="m-5">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 border-slate-100 focus:outline-none transform active:scale-50 transition-transform duration-300 shadow-sm hover:text-purple-700" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd" />
-        </svg>
-        </div>
-                <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
-                <div className="flex flex-col items-center w-32 mx-5">
-                <img src="/Imgs/second-hand-logo2.png" alt="logo" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 border-slate-100 focus:outline-none transform active:scale-50 transition-transform duration-300 shadow-sm hover:text-purple-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
                 </div>
+                <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
+                  <div className="flex flex-col items-center w-32 mx-5">
+                    <img src="/Imgs/second-hand-logo2.png" alt="logo" />
+                  </div>
                 </ul>
 
                 <ul className="inline flex-col items-center text-black w-full text-base cursor-pointer pt-10 ">

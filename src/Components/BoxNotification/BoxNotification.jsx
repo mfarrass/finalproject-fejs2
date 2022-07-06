@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-const BoxNotification = () => {
+const BoxNotification = (props) => {
   return (
     <>
-    <div className="absolute z-auto right-0 py-7 mt-9 top-0 h-screen place-items-center overflow-y-auto whitespace-nowrap sm:block hidden">
+    <div className={`absolute z-auto right-0 py-7 mt-9 top-0 h-screen place-items-center overflow-y-auto whitespace-nowrap sm:block ${props.state ? "":"hidden"}`}>
   <div className="lg:w-4/5 w-11/12 mx-20 bg-white dark:bg-gray-700 rounded-xl border shadow-sm">
   <button
+        onClick={()=>props.setState(false)}
         className="absolute -mt-3 -ml-2 p-1 text-xs sm:text-sm bg-white text-gray-500 rounded font-medium
          shadow border focus:outline-none transform active:scale-50 transition-transform duration-300 hover:bg-purple-700
           hover:text-white hover:-translate-y-1 hover:scale-110 dark:text-gray-700 dark:hover:bg-gray-100">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
             clip-rule="evenodd" />
