@@ -52,7 +52,7 @@ function App() {
               element={<HalamanProduct />}
             />
             <Route path="/preview" element={<Preview />} />
-            <Route path="/notifikasi-desktop" element={<NotifikasiDesktop />} />
+            <Route path="/notifikasi" element={<NotifikasiDesktop />} />
             <Route path="/seller-tawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
             <Route path="/seller" element={<Seller />}>

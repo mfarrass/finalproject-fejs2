@@ -120,7 +120,7 @@ const BoxNotification = (props) => {
               <p className="mt-1  text-xs">Rp 250.000</p>
             </div>
           </Link>
-          <Link to="/">
+          <Link to="/notifikasi">
             <div className="mb-3">
               <p className="text-center my-2 hover:text-purple-700 hover:font-bold">
                 Lihat Detail
