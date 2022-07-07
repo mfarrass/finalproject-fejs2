@@ -2,13 +2,13 @@ import React from "react";
 
 import Banner from "./Components/Banner";
 import ButtonCategory from "./Components/ButtonCategory";
-import ProductCard from "./Components/ProductCard";
+// import ProductCard from "./Components/ProductCard";
 import ButtonAdd from "./Components/ButtonAdd";
 import Footer from "../../Components/Footer/Footer";
 import Card from "../../Components/Card/Card";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector, useReducer } from "react-redux";
+import { useSelector } from "react-redux";
 import API from "../../API";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import ErrorAlert from "../../Components/ErrorAlert/ErrorAlert";
