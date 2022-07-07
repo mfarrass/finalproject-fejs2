@@ -6,7 +6,6 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 function Seller() {
   const location = useLocation();
 
-  console.log(location);
   return (
     <div className="App">
       <div className="container max-w-screen-lg mx-auto">

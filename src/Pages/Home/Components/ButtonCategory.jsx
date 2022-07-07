@@ -1,89 +1,149 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 
-const CategoryButton = () => {
+const CategoryButton = ({ state, setState }) => {
   return (
-    <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  flex overflow-x-auto whitespace-nowrap">
-      <div class="container flex flex-wrap justify-between items-center mx-auto">
-        <div class="w-full md:block md:w-auto" id="mobile-menu">
-          <ul class="flex flex-auto gap-6">
-            <li className="text-white hover:text-gray-700">
-              <a
-                href="#"
-                class="shadow-md toggle rounded-xl flex p-2.5 text-right bg-purple-700 hover:bg-purple-200"
+    <div className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  flex overflow-x-auto whitespace-nowrap">
+      <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <div className="w-full md:block md:w-auto" id="mobile-menu">
+          <ul className="flex flex-auto gap-6">
+            <li
+              className={`${
+                state === null
+                  ? "text-white hover:text-gray-700"
+                  : "hover:text-white"
+              }`}
+            >
+              <button
+                onClick={() => setState(null)}
+                className={`shadow-md toggle rounded-xl flex p-2.5 text-right ${
+                  state === null
+                    ? "bg-purple-700 hover:bg-purple-200"
+                    : "bg-purple-200 hover:bg-purple-700"
+                }  `}
               >
                 <BsSearch className="h-4 w-4 fill-current" />
                 <span
-                  class="iconify mt-1 mr-1"
+                  className="iconify mt-1 mr-1"
                   data-icon="carbon:search"
                 ></span>
                 Semua
-              </a>
+              </button>
             </li>
-            <li className="hover:text-white">
-              <a
-                href="#"
-                class="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  hover rounded-xl"
+            <li
+              className={`${
+                state === 1
+                  ? "text-white hover:text-gray-700"
+                  : "hover:text-white"
+              }`}
+            >
+              <button
+                onClick={() => setState(1)}
+                className={`shadow-md toggle rounded-xl flex p-2.5 text-right ${
+                  state === 1
+                    ? "bg-purple-700 hover:bg-purple-200"
+                    : "bg-purple-200 hover:bg-purple-700"
+                }  `}
               >
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
-                  class="iconify mt-1 mr-1"
+                  className="iconify mt-1 mr-1"
                   data-icon="carbon:search"
                 ></span>
                 Hobi
-              </a>
+              </button>
             </li>
-            <li className="hover:text-white">
-              <a
-                href="#"
-                class="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl"
+            <li
+              className={`${
+                state === 2
+                  ? "text-white hover:text-gray-700"
+                  : "hover:text-white"
+              }`}
+            >
+              <button
+                onClick={() => setState(2)}
+                className={`shadow-md toggle rounded-xl flex p-2.5 text-right ${
+                  state === 2
+                    ? "bg-purple-700 hover:bg-purple-200"
+                    : "bg-purple-200 hover:bg-purple-700"
+                }  `}
               >
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
-                  class="iconify mt-1 mr-1"
+                  className="iconify mt-1 mr-1"
                   data-icon="carbon:search"
                 ></span>
                 Kendaraan
-              </a>
+              </button>
             </li>
-            <li className="hover:text-white">
-              <a
-                href="#"
-                class="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl"
+            <li
+              className={`${
+                state === 3
+                  ? "text-white hover:text-gray-700"
+                  : "hover:text-white"
+              }`}
+            >
+              <button
+                onClick={() => setState(3)}
+                className={`shadow-md toggle rounded-xl flex p-2.5 text-right ${
+                  state === 3
+                    ? "bg-purple-700 hover:bg-purple-200"
+                    : "bg-purple-200 hover:bg-purple-700"
+                }  `}
               >
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
-                  class="iconify mt-1 mr-1"
+                  className="iconify mt-1 mr-1"
                   data-icon="carbon:search"
                 ></span>
                 Baju
-              </a>
+              </button>
             </li>
-            <li className="hover:text-white">
-              <a
-                href="#"
-                class="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl"
+            <li
+              className={`${
+                state === 4
+                  ? "text-white hover:text-gray-700"
+                  : "hover:text-white"
+              }`}
+            >
+              <button
+                onClick={() => setState(4)}
+                className={`shadow-md toggle rounded-xl flex p-2.5 text-right ${
+                  state === 4
+                    ? "bg-purple-700 hover:bg-purple-200"
+                    : "bg-purple-200 hover:bg-purple-700"
+                }  `}
               >
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
-                  class="iconify mt-1 mr-1"
+                  className="iconify mt-1 mr-1"
                   data-icon="carbon:search"
                 ></span>
                 Elektronik
-              </a>
+              </button>
             </li>
-            <li className="hover:text-white">
-              <a
-                href="#"
-                class="shadow-md toggle flex p-2.5 text-right bg-purple-200 hover:bg-purple-700  rounded-xl"
+            <li
+              className={`${
+                state === 5
+                  ? "text-white hover:text-gray-700"
+                  : "hover:text-white"
+              }`}
+            >
+              <button
+                onClick={() => setState(5)}
+                className={`shadow-md toggle rounded-xl flex p-2.5 text-right ${
+                  state === 5
+                    ? "bg-purple-700 hover:bg-purple-200"
+                    : "bg-purple-200 hover:bg-purple-700"
+                }  `}
               >
                 <BsSearch className=" h-4 w-4 fill-current" />
                 <span
-                  class="iconify mt-1 mr-1"
+                  className="iconify mt-1 mr-1"
                   data-icon="carbon:search"
                 ></span>
                 Kesehatan
-              </a>
+              </button>
             </li>
           </ul>
         </div>
