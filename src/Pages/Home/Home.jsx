@@ -40,7 +40,7 @@ const Home = () => {
     )
       .then((res) => {
         setLoading(false);
-        setProducts(res.data.data);
+        setProducts(res.data.data.products);
         console.log(res.data.data);
       })
       .catch((err) => {
