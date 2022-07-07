@@ -27,14 +27,20 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    API.get(`/buyers/products/?page=1&size=12`, {
-      headers: {
-        Authorization: user ? user.access_token : null,
-      },
-    })
+    setError("");
+    API.get(
+      `/buyers/products/?page=1&size=12&category=${
+        category === null ? "" : category
+      }`,
+      {
+        headers: {
+          Authorization: user ? user.access_token : "",
+        },
+      }
+    )
       .then((res) => {
         setLoading(false);
-        setProducts(res.data.data);
+        setProducts(res.data.data.products);
         console.log(res.data.data);
       })
       .catch((err) => {
