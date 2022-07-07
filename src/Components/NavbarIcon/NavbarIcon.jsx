@@ -7,10 +7,12 @@ import { MdFormatListBulleted } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import BoxNotification from "../../Components/BoxNotification/BoxNotification";
+import DropDownIcon from "../../Pages/Home/Components/DropDownIcon";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggleNotif, setToggleNotif] = useState(false);
+  const [toggleProfile, setToggleProfile] = useState(false);
   return (
     <>
       <div className="mt-20 absolute z-10">
@@ -94,7 +96,7 @@ const Navbar = () => {
             </div>
             <div className="flex sm:block hidden">
               <button
-                onClick={() => setToggleNotif(true)}
+                onClick={() => setToggleProfile(true)}
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
@@ -107,6 +109,7 @@ const Navbar = () => {
               </button>
             </div>
             <BoxNotification state={toggleNotif} setState={setToggleNotif} />
+            <DropDownIcon state={toggleProfile} setState={setToggleProfile} />
             <button className="block sm:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
@@ -154,7 +157,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* Content */}
       <Outlet />
     </>
   );

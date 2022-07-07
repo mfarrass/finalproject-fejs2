@@ -1,7 +1,8 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
-import { Outlet, Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
@@ -68,7 +69,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       <Outlet />
     </>
   );

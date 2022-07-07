@@ -7,10 +7,10 @@ import { BiArrowBack } from "react-icons/bi";
 const NotifikasiDesktop = () => {
     return (
         <>
-        <div className="-mt-5 pl-5 absolute hover:text-purple-700 ">
+        <div className="z-auto right-0 py-7 mt-28 hover:text-purple-700 ">
             <BiArrowBack className="w-6 h-6 focus:outline-none transform active:scale-50 transition-transform duration-300 shadow-sm"/>
         </div>
-            <div className="6 z-auto right-0 py-7 mt-28 top-0 bg-white dark:bg-gray-700 h-screen place-items-center">
+            <div className="z-auto right-0 py-7 mt-28 top-0 bg-white dark:bg-gray-700 h-screen place-items-center">
                 <div className="lg:w-4/5 w-11/12 mx-auto bg-white dark:bg-gray-700 rounded-xl border shadow-sm">
                     <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
                         <div className=" inline-flex items-center justify-between w-full">
