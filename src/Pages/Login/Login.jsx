@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { isLoading, user, error } = useSelector((state) => state.auth);
+  const { isLoading, user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
