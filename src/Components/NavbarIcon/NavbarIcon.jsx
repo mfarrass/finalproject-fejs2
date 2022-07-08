@@ -5,6 +5,7 @@ import { AiOutlineStar } from "react-icons/ai";
 // import { AiOutlineArrowLeft } from "react-icons/ai";
 import { MdFormatListBulleted } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
+import { GiExitDoor } from "react-icons/gi";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 import DropDownIcon from "../../Pages/Home/Components/DropDownIcon";
@@ -132,7 +133,7 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
-                <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
+                <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-6">
                   <div className="flex flex-col items-center w-32 mx-5">
                     <img src="/Imgs/second-hand-logo2.png" alt="logo" />
                   </div>
@@ -151,6 +152,19 @@ const Navbar = () => {
                   <li className="mb-3 hover:bg-purple-700 hover:text-white">
                     Wistlist
                   </li>
+                </ul>
+                
+                <ul className="relative flex justify-center w-full text-base cursor-pointer pt-10">
+                <Link
+                to="/"
+                className="shadow-md block text-md w-28 h-10 py-2 -mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
+              >
+                {" "}
+                <span className="px-5 -ml-5">
+                  <GiExitDoor className="inline-block absolute z-10 text-center mt-1" />
+                </span>
+                Logout
+              </Link>
                 </ul>
               </div>
             </button>

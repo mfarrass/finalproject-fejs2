@@ -75,7 +75,7 @@ const HalamanProduct = () => {
             {error}
             <Link to="/info-profil" className="font-bold">
               {" "}
-              Lengakapi Disini
+              Lengkapi Disini
             </Link>
           </ErrorAlert>
         </div>
