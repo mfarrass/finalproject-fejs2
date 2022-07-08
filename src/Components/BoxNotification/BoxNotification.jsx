@@ -5,7 +5,7 @@ const BoxNotification = (props) => {
   return (
     <>
       <div
-        className={`absolute z-auto right-0 py-7 mt-9 top-0 h-screen place-items-center overflow-y-auto whitespace-nowrap ${
+        className={`absolute z-0 right-0 py-7 mt-9 top-0 h-screen place-items-center overflow-y-auto whitespace-nowrap ${
           props.state ? "sm:block " : "hidden"
         }`}
       >
@@ -30,7 +30,7 @@ const BoxNotification = (props) => {
             </svg>
           </button>
           <Link to="/">
-            <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
+            <div className="mt-1 px-6 py-3 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500 rounded-lg shadow w-full">
               <div className=" inline-flex items-center justify-between w-full">
                 <div className="inline-flex items-center">
                   <img
@@ -49,7 +49,7 @@ const BoxNotification = (props) => {
             </div>
           </Link>
           <Link to="/">
-            <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
+            <div className="mt-2 px-6 py-4 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500 rounded-lg shadow w-full">
               <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
                 <div className="inline-flex items-center">
                   <img
@@ -67,7 +67,7 @@ const BoxNotification = (props) => {
             </div>
           </Link>
           <Link to="/">
-            <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
+            <div className="mt-2 px-6 py-4 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500  rounded-lg shadow w-full">
               <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
                 <div className="inline-flex items-center">
                   <img
@@ -85,7 +85,7 @@ const BoxNotification = (props) => {
             </div>
           </Link>
           <Link to="/">
-            <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
+            <div className="mt-2 px-6 py-4 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500  rounded-lg shadow w-full">
               <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
                 <div className="inline-flex items-center">
                   <img
@@ -103,7 +103,7 @@ const BoxNotification = (props) => {
             </div>
           </Link>
           <Link to="/">
-            <div className="mt-2 px-6 py-4 bg-white hover:bg-gray-100  rounded-lg shadow w-full">
+            <div className="mt-2 px-6 py-4 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500  rounded-lg shadow w-full">
               <div className=" inline-flex items-center justify-between sm:justify-items-stretch w-full">
                 <div className="inline-flex items-center">
                   <img
