@@ -7,12 +7,14 @@ import { MdFormatListBulleted } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import BoxNotification from "../../Components/BoxNotification/BoxNotification";
-import DropDownIcon from "../../Pages/Home/Components/DropDownIcon";
+import DropDownIcon from "../DropDownIcon/DropDownIcon";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggleNotif, setToggleNotif] = useState(false);
   const [toggleProfile, setToggleProfile] = useState(false);
+
   return (
     <>
       <div className="mt-20 absolute z-10">

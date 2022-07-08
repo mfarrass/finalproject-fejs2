@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../Components/Card/Card";
-import { Link } from "react-router-dom";
+
 
 export default function Wishlist(props) {
   return (

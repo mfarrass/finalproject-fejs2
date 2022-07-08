@@ -1,6 +1,6 @@
 import pf from "./img/Profile.png";
 import { BiCube, BiHeart, BiDollar, BiChevronRight } from "react-icons/bi";
-import Card from "../../Components/Card/Card";
+
 import { Outlet, Link, useLocation } from "react-router-dom";
 
 function Seller() {

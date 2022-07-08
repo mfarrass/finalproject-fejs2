@@ -19,11 +19,10 @@ import Auth from "./Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
-import DropDownIcon from "././Pages/Home/Components/DropDownIcon";
-import { ToastContainer, toast } from "react-toastify";
+
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from "./Pages/Wishlist/Wishlist";
-
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -54,7 +53,7 @@ function App() {
             />
             <Route path="/preview" element={<Preview />} />
             <Route path="/notifikasi" element={<NotifikasiDesktop />} />
-            <Route path="/dropdown" element={<DropDownIcon />} />
+
             <Route path="/seller-tawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
             <Route path="/seller" element={<Seller />}>
