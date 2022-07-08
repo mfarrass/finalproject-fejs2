@@ -46,6 +46,7 @@ const Navbar = () => {
                   <button
                     type="submit"
                     className="absolute right top-0 mt-3 -ml-8 "
+                    onClick={(e) => e.preventDefault()}
                   >
                     <BsSearch className="text-gray-600 hover:text-purple-700 h-4 w-4 fill-current" />
                   </button>
@@ -54,7 +55,7 @@ const Navbar = () => {
             </div>
             <div className="flex sm:block hidden">
               <Link
-                to="/"
+                to="/wishlist"
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}
@@ -95,10 +96,14 @@ const Navbar = () => {
               </button>
             </div>
             <div className="flex sm:block hidden">
+<<<<<<< HEAD
               <button
                 onClick={() => setToggleProfile(true)}
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
+=======
+              <button className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0">
+>>>>>>> 92516ca38d765e754f6628ae5c0f8647bad43438
                 {" "}
                 <span className="px-2">
                   <VscAccount

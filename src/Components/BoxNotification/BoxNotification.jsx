@@ -9,12 +9,12 @@ const BoxNotification = (props) => {
           props.state ? "sm:block " : "hidden"
         }`}
       >
-        <div className="lg:w-4/5 w-11/12 mx-20 bg-white dark:bg-gray-700 rounded-xl border shadow-sm">
+        <div className="lg:w-4/5 w-11/12 mx-20 bg-white  rounded-xl border shadow-sm">
           <button
             onClick={() => props.setState(false)}
             className="absolute -mt-3 -ml-2 p-1 text-xs sm:text-sm bg-white text-gray-500 rounded font-medium
          shadow border focus:outline-none transform active:scale-50 transition-transform duration-300 hover:bg-purple-700
-          hover:text-white hover:-translate-y-1 hover:scale-110 dark:text-gray-700 dark:hover:bg-gray-100"
+          hover:text-white hover:-translate-y-1 hover:scale-110  dark:hover:bg-gray-100"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -22,42 +22,17 @@ export default function SwiperGambar(props) {
         pagination={{ clickable: true }}
       >
         {/**swiper content */}
-        <SwiperSlide>
-          <div className="flex justify-center">
-            <img
-              src="../casio.png"
-              alt=""
-              className="h-[300px] w-[360px] md:w-full md:h-full rounded-2xl"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center">
-            <img
-              src="../casio.png"
-              alt=""
-              className="h-[300px] w-[360px] md:w-full md:h-full rounded-2xl"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center">
-            <img
-              src="../casio.png"
-              alt=""
-              className="h-[300px] w-[360px] md:w-full md:h-full rounded-2xl"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center">
-            <img
-              src="../casio.png"
-              alt=""
-              className="h-[300px] w-[360px] md:w-full md:h-full rounded-2xl"
-            />
-          </div>
-        </SwiperSlide>
+        {props.images.map((item, i) => (
+          <SwiperSlide key={i}>
+            <div className="flex justify-center">
+              <img
+                src={item.image}
+                alt=""
+                className="h-[300px] w-[360px] md:w-full md:h-full rounded-2xl"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
