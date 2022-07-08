@@ -44,7 +44,7 @@ const Navbar = () => {
                 Masuk
               </Link>
             </div>
-            <button className="block md:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group">
+            <button className="block md:hidden py-3 px-4 mx-2 rounded focus:outline-none hover:bg-gray-200 group z-40">
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600 mb-1"></div>
               <div className="w-5 h-1 bg-gray-600"></div>

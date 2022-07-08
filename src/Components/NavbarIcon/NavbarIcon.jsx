@@ -64,7 +64,7 @@ const Navbar = () => {
                 <span className="px-2">
                   <AiOutlineStar
                     fontSize="23px"
-                    className="inline-block absolute z-10 text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
+                    className="inline-block absolute text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 <span className="px-2">
                   <MdFormatListBulleted
                     fontSize="22px"
-                    className="inline-block absolute z-10 text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
+                    className="inline-block absolute text-center focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
                 <span className="px-2">
                   <AiOutlineBell
                     fontSize="22px"
-                    className="absolute z-10 text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
+                    className="absolute text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </button>
@@ -106,7 +106,7 @@ const Navbar = () => {
                 <span className="px-2">
                   <VscAccount
                     fontSize="22px"
-                    className="absolute z-10 text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
+                    className="absolute text-center inline-block focus:outline-none transform active:scale-50 transition-transform duration-300"
                   />
                 </span>
               </button>
@@ -119,7 +119,7 @@ const Navbar = () => {
               <div className="w-5 h-1 bg-gray-600"></div>
               <div
                 className="absolute top-0 -right-full h-screen w-8/12 bg-white border opacity-0
-            group-focus:right-0 group-focus:opacity-100 transition-all duration-300"
+            group-focus:right-0 group-focus:opacity-100 transition-all duration-300 z-40"
               >
                 <div className="m-5">
                   <svg

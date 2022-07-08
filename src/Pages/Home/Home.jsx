@@ -1,5 +1,4 @@
 import React from "react";
-
 import Banner from "./Components/Banner";
 import ButtonCategory from "./Components/ButtonCategory";
 // import ProductCard from "./Components/ProductCard";
@@ -66,7 +65,7 @@ const Home = () => {
               {error ? (
                 <ErrorAlert>{error}</ErrorAlert>
               ) : (
-                <div className="my-6 pb-6 grid grid-cols-2 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3">
+                <div className="my-6 pb-20 grid grid-cols-2 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3">
                   {products.map((product, i) => (
                     <Card
                       key={i}
@@ -82,7 +81,6 @@ const Home = () => {
                 </div>
               )}
             </div>
-            {/* <BoxNotification /> */}
             {!error && <ButtonAdd />}
             <Footer />
           </div>
