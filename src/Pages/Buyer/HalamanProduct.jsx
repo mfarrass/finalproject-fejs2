@@ -9,6 +9,7 @@ import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import { useSelector } from "react-redux/es/exports";
 import ErrorAlert from "../../Components/ErrorAlert/ErrorAlert";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const HalamanProduct = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,24 +21,52 @@ const HalamanProduct = () => {
   const [product, setProduct] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [tawarInput, setTawarInput] = useState(0);
   const { user } = useSelector((state) => state.auth);
+  console.log(user.access_token);
   useEffect(() => {
     setLoading(true);
     API.get(`/buyers/products/${productId}`, {
       headers: {
-        Authorization: user ? user.access_token : null,
+        Authorization: user ? user.access_token : "",
       },
     })
       .then((res) => {
-        setProduct(res.data);
+        setProduct(res.data.data.products);
         setLoading(false);
+        setTawarInput(res.data.data.products.price);
       })
       .catch((err) => {
-        console.log(err);
         setError(err.response.data.message);
         setLoading(false);
       });
-  }, []);
+  }, [user, productId]);
+
+  const submitTawar = () => {
+    setDisableButton(true);
+    API.post(
+      `/buyers/products/${productId}/offer`,
+      {
+        price: tawarInput,
+      },
+      {
+        headers: {
+          Authorization: user ? user.access_token : "",
+        },
+      }
+    )
+      .then((res) => {
+        setDisableButton(true);
+        setShowModal(false);
+        toast.success("Tawaran berhasil dikirim");
+      })
+      .catch((err) => {
+        setDisableButton(false);
+        setShowModal(false);
+        toast.error("Tawaran gagal dikirim");
+        console.log(err);
+      });
+  };
   return (
     <>
       {error && !loading && (
@@ -60,7 +89,7 @@ const HalamanProduct = () => {
               {/**container gambar utama */}
               <div className="flex justify-center">
                 <div className="h-[300px] w-[360px] md:h-full md:w-full z-0">
-                  <SwiperGambar />
+                  <SwiperGambar images={product.ProductImage} />
                 </div>
               </div>
               {/**container nama barang dan penjual */}
@@ -68,11 +97,23 @@ const HalamanProduct = () => {
                 <div className="flex justify-center md:justify-start">
                   <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg z-10">
                     <div className="ml-3 grid w-[328px]">
-                      <p className="font-semibold mt-3">Jam Tangan Casio</p>
-                      <p className="text-xs font-thin mt-1 opacity-70">
-                        Aksesoris
+                      <p className="font-semibold mt-3">{product.name}</p>
+                      <div className="flex gap-2">
+                        {product.ProductCategory.map((item, i) => (
+                          <p
+                            key={i}
+                            className="text-xs font-thin mt-1 opacity-70"
+                          >
+                            {item.Category.name}
+                          </p>
+                        ))}
+                      </div>
+                      <p className="font-medium">
+                        {new Intl.NumberFormat("id-ID", {
+                          style: "currency",
+                          currency: "IDR",
+                        }).format(product.price)}
                       </p>
-                      <p className="font-medium">Rp.250.000</p>
                       {/**button modal desktop */}
                       <button
                         onClick={() => {
@@ -97,14 +138,16 @@ const HalamanProduct = () => {
                     <div className="flex w-[328px]">
                       <div className="ml-3 mt-3 h-[48px] w-[48px]">
                         <img
-                          src="./fotopenjual.png"
+                          src={product.User.profile_picture}
                           alt=""
                           className="h-[48px] w-full"
                         />
                       </div>
                       <div className="mt-2 ml-4 grid w-full">
-                        <p className="font-semibold">Nama Penjual</p>
-                        <p className="font-thin text-xs opacity-70">Kota</p>
+                        <p className="font-semibold">{product.User.nama}</p>
+                        <p className="font-thin text-xs opacity-70">
+                          {product.User.kota}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -115,19 +158,7 @@ const HalamanProduct = () => {
                 <div className="mt-4 p-3 h-auto w-[328px] border-2 rounded-2xl md:col-span-1 md:h-auto md:w-full">
                   <p className="font-semibold mt-2">Deskripsi</p>
                   <p className="font-thin opacity-70 mt-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aliquam eget tincidunt elit. Praesent interdum ex magna, id
-                    tincidunt felis elementum aliquam. Pellentesque quis odio
-                    quis diam interdum commodo eu vel eros. Mauris facilisis sem
-                    ac nisl ultrices consequat. Vestibulum feugiat odio non
-                    velit viverra euismod. Maecenas a interdum enim. Suspendisse
-                    rhoncus bibendum condimentum. Donec id quam id metus
-                    sollicitudin fermentum. Ut imperdiet metus vitae ornare
-                    interdum. Fusce ac nisl dapibus, suscipit augue vitae,
-                    sagittis enim. Sed non hendrerit dolor. Ut non malesuada
-                    justo. Curabitur aliquam libero vitae ipsum tristique
-                    iaculis eget ac neque. Sed feugiat augue eu ante egestas
-                    luctus.
+                    {product.description}
                   </p>
                 </div>
               </div>
@@ -162,8 +193,13 @@ const HalamanProduct = () => {
                   className="w-[48px] h-[48px] rounded-lg"
                 />
                 <div className="ml-4">
-                  <p className="font-semibold">Jam Tangan Casio</p>
-                  <p className="font-semibold">250.000</p>
+                  <p className="font-semibold">{product.name}</p>
+                  <p className="font-semibold">
+                    {new Intl.NumberFormat("id-ID", {
+                      style: "currency",
+                      currency: "IDR",
+                    }).format(product.price)}
+                  </p>
                 </div>
               </div>
             </div>
@@ -171,15 +207,18 @@ const HalamanProduct = () => {
             <form>
               <p className="ml-8 mt-4">Harga Tawar</p>
               <input
-                type="text"
+                type="number"
                 className="w-[296px] h-[48px] mx-8 rounded-2xl border-2 mt-1 indent-4"
                 placeholder="Rp.0,00"
+                value={tawarInput}
+                onChange={(e) => setTawarInput(e.target.value)}
               />
               <div className="flex items-center justify-center p-4">
                 <button
+                  disabled={disableButton}
                   className="w-[296px] bg-purple-700 text-white active:bg-purple-700 hover:bg-purple-400 focus:scale-90 font-bold uppercase text-sm py-3 rounded-2xl shadow hover:shadow-lg outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
                   type="button"
-                  onClick={() => setDisableButton(true)}
+                  onClick={submitTawar}
                 >
                   Kirim
                 </button>
