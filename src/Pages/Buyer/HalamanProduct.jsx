@@ -95,7 +95,7 @@ const HalamanProduct = () => {
               {/**container nama barang dan penjual */}
               <div className="jam_tangan+penjual md:pt-8">
                 <div className="flex justify-center md:justify-start">
-                  <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-[204px] md:w-[336px] shadow-lg z-10">
+                  <div className="bg-white mx-4 -mt-8 h-[98px] w-[328px] border-2 rounded-2xl md:h-auto md:w-[336px] shadow-lg z-10">
                     <div className="ml-3 grid w-[328px]">
                       <p className="font-semibold mt-3">{product.name}</p>
                       <div className="flex gap-2">
@@ -129,6 +129,9 @@ const HalamanProduct = () => {
                         {disableButton
                           ? "Menunggu Respon Penjual"
                           : "Saya Tertarik dan Ingin Nego"}
+                      </button>
+                      <button className="w-[304px] h-[48px] rounded-xl invisible md:visible my-3 border-3 bg-blue-300 border-black px-3.5 py-3.5 hover:bg-purple-400 focus:scale-90 text-white">
+                        Tambahkan Ke Wishlist
                       </button>
                     </div>
                   </div>
@@ -168,10 +171,13 @@ const HalamanProduct = () => {
               <button
                 onClick={() => setShowModal(true)}
                 className={
-                  "mx-4 mt-4 text-white w-[328px] h-[48px] rounded-2xl bg-purple-600 md:hidden"
+                  "mx-4 mt-4 p-1 text-white w-[328px] h-[48px] rounded-2xl bg-purple-600 hover:bg-purple-400 focus:scale-90 md:hidden"
                 }
               >
                 Saya Tertarik dan Ingin Nego
+              </button>
+              <button className="mx-4 mt-4 p-1 text-white w-[328px] h-[48px] rounded-2xl bg-blue-300 hover:bg-purple-400 focus:scale-90 md:hidden">
+                Tambahkan ke Wishlist
               </button>
             </div>
           </div>
