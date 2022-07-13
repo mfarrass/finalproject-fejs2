@@ -8,7 +8,11 @@ const Card = (props) => {
         <div className="w-full flex justify-center">
           <img
             className="aspect-video rounded hover:scale-90 ease-in duration-100 hover:opacity"
-            src={props.img}
+            src={
+              props.img
+                ? props.img
+                : "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
+            }
             alt="product"
           />
         </div>

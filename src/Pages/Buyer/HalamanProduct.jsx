@@ -23,7 +23,7 @@ const HalamanProduct = () => {
   const [error, setError] = useState(false);
   const [tawarInput, setTawarInput] = useState(0);
   const { user } = useSelector((state) => state.auth);
-  console.log(user.access_token);
+
   useEffect(() => {
     setLoading(true);
     API.get(`/buyers/products/${productId}`, {
@@ -194,7 +194,7 @@ const HalamanProduct = () => {
             <div className="mt-2 relative flex-auto bg-slate-100 shadow-lg rounded-2xl mx-8 p-4 w-[296px]">
               <div className="flex">
                 <img
-                  src="./casio.png"
+                  src={product.ProductImage[0].image}
                   alt=""
                   className="w-[48px] h-[48px] rounded-lg"
                 />
