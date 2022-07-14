@@ -10,7 +10,6 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 import DropDownIcon from "../DropDownIcon/DropDownIcon";
 
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggleNotif, setToggleNotif] = useState(false);
@@ -57,7 +56,7 @@ const Navbar = () => {
             </div>
             <div className="flex sm:block hidden">
               <Link
-                to="/"
+                to="/wishlist"
                 className="block text-md text-center w-10 h-10 py-2 text-black hover:text-purple-700 lg:mt-0"
               >
                 {" "}

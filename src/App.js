@@ -54,7 +54,7 @@ function App() {
             <Route path="/preview" element={<Preview />} />
             <Route path="/notifikasi" element={<NotifikasiDesktop />} />
 
-            <Route path="/seller-tawar" element={<SellerTawar />} />
+            <Route path="/seller-tawar/:idTawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
             <Route path="/seller" element={<Seller />}>
               <Route path="" element={<Produk />} />

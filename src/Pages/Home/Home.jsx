@@ -75,7 +75,11 @@ const Home = () => {
                         (category, i) => `${category.Category.name} `
                       )}
                       harga={product.price}
-                      img={product.ProductImage[0].image}
+                      img={
+                        product.ProductImage.length === 0
+                          ? "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
+                          : product.ProductImage[0].image
+                      }
                     />
                   ))}
                 </div>
