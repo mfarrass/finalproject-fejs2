@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardSeller = (props) => {
+const CardTerjual = (props) => {
   return (
     <div className="h-50 shadow-md rounded-sm py-2 px-2 border-red-900">
       <div className="w-full flex justify-center">
@@ -26,4 +26,4 @@ const CardSeller = (props) => {
   );
 };
 
-export default CardSeller;
+export default CardTerjual;

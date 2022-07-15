@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import API from "../../../API";
-import Card from "../../../Components/Card/Card";
+
 import { toast } from "react-toastify";
 import ErrorAlert from "../../../Components/ErrorAlert/ErrorAlert";
 import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
@@ -14,6 +14,7 @@ const Diminati = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [products, setProducts] = useState([]);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     API.get("/sellers/products?filter=interested", {
@@ -30,18 +31,20 @@ const Diminati = () => {
       })
       .catch((err) => {
         if (err.response.data.code === 404) {
-          setError(err.response.data.message);
+          setMessage(
+            "Belum ada produkmu yang diminati nih, sabar ya rejeki gak kemana kok"
+          );
         } else {
+          toast.error("Ada Kesalahan Dalam Pengambilan Data");
           setError("Terjadi kesalahan");
         }
         setIsLoading(false);
-        toast.error("Ada Kesalahan Dalam Pengambilan Data");
       });
-  }, []);
+  }, [user]);
 
-  console.log(products);
   return (
     <>
+      {message && <div className="text-center">{message}</div>}
       {isLoading && !error && <LoadingSpinner />}
       {error && <ErrorAlert>{error}</ErrorAlert>}
       {!isLoading && !error && (

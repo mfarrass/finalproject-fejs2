@@ -49,7 +49,7 @@ const SellerTawar = () => {
     API.put(
       `/sellers/products/interests/${idTawar}/status`,
       {
-        agreement: radio,
+        status: radio,
       },
       {
         headers: {
@@ -58,13 +58,14 @@ const SellerTawar = () => {
       }
     )
       .then((res) => {
-        toast.success("Berhasil Menyetujui Penawaran");
+        toast.success("Berhasil Mengubah Status Penawaran");
         setButtonLoading(false);
         navigate("/seller/diminati");
       })
       .catch((err) => {
+        console.log(err);
         setButtonLoading(false);
-        toast.error("Ada Kesalahan Dalam Pengambilan Data");
+        toast.error("Ada Kesalahan Saat Menyelesaikan Pesanan");
       });
   };
 

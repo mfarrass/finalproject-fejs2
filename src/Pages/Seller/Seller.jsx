@@ -1,4 +1,3 @@
-import pf from "./img/Profile.png";
 import { BiCube, BiHeart, BiDollar, BiChevronRight } from "react-icons/bi";
 import API from "../../API";
 import { Outlet, Link, useLocation } from "react-router-dom";
@@ -26,13 +25,14 @@ function Seller() {
       .then((res) => {
         setPengguna(res.data.data);
         setIsLoading(false);
+        console.log(res.data.data);
       })
       .catch((err) => {
         setError("Ada Kesalahan Dalam Pengambilan Data");
         toast.error("Ada Kesalahan Dalam Pengambilan Data");
       });
   }, [user]);
-  console.log(pengguna);
+
   return (
     <>
       {isLoading && !error && <LoadingSpinner />}
@@ -52,7 +52,11 @@ function Seller() {
             {/* Card Profile Penjual */}
             <div className="flex p-6  shadow-md justify-between rounded-3xl">
               <div className="flex h-12">
-                <img src={pf} alt="profile" />
+                <img
+                  src={pengguna.profile_picture}
+                  alt="profile"
+                  className="rounded-lg"
+                />
                 <div className="text-profil ml-5">
                   <h1 className="text-sm md:text-xl">{pengguna.nama}</h1>
                   <p className="text-xs text-gray-300">{pengguna.alamat}</p>
