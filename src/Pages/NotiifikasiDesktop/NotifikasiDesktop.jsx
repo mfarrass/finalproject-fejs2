@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import API from "../../API";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
+import moment from "moment";
 const NotifikasiDesktop = () => {
   const navigate = useNavigate();
   const [notif, setNotif] = useState([]);
@@ -46,10 +47,10 @@ const NotifikasiDesktop = () => {
           {loading && !error && <LoadingSpinner />}
           {!loading &&
             !error &&
-            notif.map((item) => {
+            notif.map((item, i) => {
               if (item.NotifactionsInterestedProduct) {
                 return (
-                  <Link to="#">
+                  <Link to="#" key={i}>
                     <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
                       <div className=" inline-flex items-center justify-between w-full">
                         <div className="inline-flex items-center">
@@ -94,9 +95,11 @@ const NotifikasiDesktop = () => {
                         </div>
                         <div className="inline-flex items-center">
                           <p className="text-xs mx-3 text-gray-500">
-                            20 Apr, 14:40
+                            {moment(item.createdAt)
+                              .locale("id")
+                              .format("MMMM Do YYYY")}
                           </p>
-                          <span class="rounded-full w-2 h-2 bg-red-500"></span>
+                          <span className="rounded-full w-2 h-2 bg-red-500"></span>
                         </div>
                       </div>
                     </div>

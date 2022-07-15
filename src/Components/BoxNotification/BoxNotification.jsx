@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import API from "../../API";
+import moment from "moment";
 const BoxNotification = (props) => {
   const [notif, setNotif] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -76,7 +77,11 @@ const BoxNotification = (props) => {
                           />
                           <p className="text-xs text-gray-500">{item.status}</p>
                         </div>
-                        <p className="text-xs text-gray-500">20 Apr, 14:40</p>
+                        <p className="text-xs text-gray-500">
+                          {moment(item.createdAt)
+                            .locale("id")
+                            .format("MMMM Do YYYY")}
+                        </p>
                         <span className="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
                       </div>
                       <p className="mt-1 text-xs">
