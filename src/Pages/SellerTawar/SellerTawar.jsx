@@ -89,7 +89,31 @@ const SellerTawar = () => {
       })
       .catch((err) => {
         setButtonLoading(false);
-        toast.error("Ada Kesalahan Dalam Pengambilan Data");
+        toast.error("Ada Kesalahan Dalam Pemrosesan Data");
+      });
+  };
+
+  const onTolak = () => {
+    setButtonLoading(true);
+    API.put(
+      `/sellers/products/interests/${idTawar}`,
+      {
+        agreement: "false",
+      },
+      {
+        headers: {
+          Authorization: user ? user.access_token : "",
+        },
+      }
+    )
+      .then((res) => {
+        setButtonLoading(false);
+        toast.success("Berhasil Menolak Penawaran");
+        navigate(-1);
+      })
+      .catch((err) => {
+        setButtonLoading(false);
+        toast.error("Ada Kesalahan Dalam Pemrosesan Data");
       });
   };
   return (
@@ -177,7 +201,7 @@ const SellerTawar = () => {
                     {tawar.agreement === null && !(buttonLoading === true) && (
                       <div className="flex justify-center md:justify-end">
                         <button
-                          onClick={() => {}}
+                          onClick={onTolak}
                           className="bg-purple-white border-purple-700 border-2 hover:bg-purple-900 text-black hover:text-white text-sm h-12  py-2 px-4 rounded-xl mt-8 transition ease-in-out duration-300 w-[250px] mr-8"
                         >
                           Tolak
