@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux/es/exports";
 import SwiperGambar from "../../../Components/SwiperGambar/SwiperGambar";
+import { useParams } from "react-router-dom";
+import API from "../../../API";
+
 const Preview = () => {
+  const { prodId } = useParams();
+  const [product, setProduct] = useState();
+  const { user } = useSelector((state) => state.auth);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    API.get(`/sellers/products/${prodId}`, {
+      headers: {
+        Authorization: user ? user.access_token : "",
+      },
+    })
+      .then((res) => {
+        setProduct(res.data.data.product);
+        setLoading(false);
+        console.log(product);
+      })
+      .catch((err) => {
+        setError(err.response.data.message);
+        setLoading(false);
+      });
+  }, [user, prodId]);
+
   return (
     <div>
       {/**main container */}
@@ -14,7 +42,7 @@ const Preview = () => {
                 alt=""
                 className="h-[300px] w-[360px] md:h-full md:w-full rounded-2xl"
               /> */}
-              <SwiperGambar />
+              {/* <SwiperGambar /> */}
             </div>
           </div>
           {/**container nama barang dan penjual */}
