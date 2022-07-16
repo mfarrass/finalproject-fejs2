@@ -31,7 +31,7 @@ const SellerTawar = () => {
       .then((res) => {
         setLoading(false);
         setTawar(res.data.data);
-        console.log(res.data.data);
+        // console.log(res.data.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -89,9 +89,34 @@ const SellerTawar = () => {
       })
       .catch((err) => {
         setButtonLoading(false);
-        toast.error("Ada Kesalahan Dalam Pengambilan Data");
+        toast.error("Ada Kesalahan Dalam Pemrosesan Data");
       });
   };
+
+  const onTolak = () => {
+    setButtonLoading(true);
+    API.put(
+      `/sellers/products/interests/${idTawar}`,
+      {
+        agreement: "false",
+      },
+      {
+        headers: {
+          Authorization: user ? user.access_token : "",
+        },
+      }
+    )
+      .then((res) => {
+        setButtonLoading(false);
+        toast.success("Berhasil Menolak Penawaran");
+        navigate(-1);
+      })
+      .catch((err) => {
+        setButtonLoading(false);
+        toast.error("Ada Kesalahan Dalam Pemrosesan Data");
+      });
+  };
+
   return (
     <>
       {loading && <LoadingSpinner />}
@@ -107,7 +132,11 @@ const SellerTawar = () => {
                 {/* Profile */}
                 <div className="flex p-6  shadow-md justify-between rounded-3xl">
                   <div className="flex h-12">
-                    <img src={pf} alt="profile" />
+                    <img
+                      src={tawar.Buyer.profile_picture}
+                      alt="profile"
+                      className="rounded-lg"
+                    />
                     <div className="text-profil ml-5">
                       <h1 className="text-sm md:text-xl">{tawar.Buyer.nama}</h1>
                       <p className="text-xs text-gray-300">
@@ -129,7 +158,7 @@ const SellerTawar = () => {
                     <div className="flex mx-5">
                       <div className="w-14">
                         <img
-                          src={tawar.Product.img}
+                          src={tawar.Product.ProductImage[0].image}
                           alt="jam tangan"
                           className="rounded-xl"
                         />
@@ -177,7 +206,7 @@ const SellerTawar = () => {
                     {tawar.agreement === null && !(buttonLoading === true) && (
                       <div className="flex justify-center md:justify-end">
                         <button
-                          onClick={() => {}}
+                          onClick={onTolak}
                           className="bg-purple-white border-purple-700 border-2 hover:bg-purple-900 text-black hover:text-white text-sm h-12  py-2 px-4 rounded-xl mt-8 transition ease-in-out duration-300 w-[250px] mr-8"
                         >
                           Tolak
@@ -226,7 +255,7 @@ const SellerTawar = () => {
                 {/* Pembeli */}
                 <div className="mx-3 flex items-center">
                   <img
-                    src="https://m0.her.ie/wp-content/uploads/2018/01/07093633/GettyImages-887815620.jpg"
+                    src={tawar.Buyer.profile_picture}
                     className="w-14 h-14 object-cover rounded-xl"
                     alt=""
                   />
@@ -239,7 +268,7 @@ const SellerTawar = () => {
                 {/* barang */}
                 <div className="mx-3 flex items-center mt-4">
                   <img
-                    src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//86/MTA-13534303/lige_lige_jam_tangan_quartz_fashion_fungsi_chronograph_stainless_steel_anti_air_untuk_pria_full01_25378a23.jpg"
+                    src={tawar.Product.ProductImage[0].image}
                     className="w-14 h-14 object-cover rounded-xl"
                     alt=""
                   />

@@ -19,7 +19,7 @@ import Auth from "./Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
-
+import SearchPage from "./Pages/SearchPage/SearchPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from "./Pages/Wishlist/Wishlist";
@@ -44,7 +44,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/daftar" element={<Daftar />} />
+
         <Route path="" element={user ? <NavbarIcon /> : <Navbar />}>
+          <Route path="/search/:keyword" element={<SearchPage />} />
           <Route path="/" element={<Home />} />
           <Route element={<Auth />}>
             <Route path="/info-profil" element={<InfoProfil />} />

@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (search.length > 0) {
+      navigate("/search/" + search);
+    } else {
+      toast.warning("Silahkan isi kolom pencarian terlebih dahulu");
+    }
+  };
   return (
     <>
       <div className="mt-20 absolute z-10 ">
         <div className="fixed top-0 left-0 h-16 -mb-25 bg-white w-full shadow-none sm:shadow">
           <div className="container m-auto p-3 flex justify-between items-center text-gray-700">
-          <Link
-              to="/">
-              <img src="/Imgs/second-hand-logo2.png" alt="" className="md:block hidden mt-2 w-18 h-10 lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"/>
+            <Link to="/">
+              <img
+                src="/Imgs/second-hand-logo2.png"
+                alt=""
+                className="md:block hidden mt-2 w-18 h-10 lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
+              />
             </Link>
             <div className="flex-1 relative mx-5 text-gray-600">
               <form>
@@ -21,11 +36,13 @@ const Navbar = () => {
                     type="text"
                     name="name"
                     className="shadow-md border-gray-300 bg-gray-100 w-full md:w-auto h-10 pl-4 pr-14 border-0 rounded-xl text-sm focus:outline-none"
-                    placeholder="Haloo di sini ..."
+                    placeholder="Cari di sini ..."
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
                   />
                   <button
-                    type="submit"
                     className="absolute right top-0 mt-3 -ml-8 "
+                    onClick={handleSearch}
                   >
                     <BsSearch className="text-gray-600 h-4 w-4 fill-current" />
                   </button>
@@ -74,16 +91,16 @@ const Navbar = () => {
                 </ul>
 
                 <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
-                <Link
-                to="/login"
-                className="shadow-md block text-md w-28 h-10 py-2 -mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
-              >
-                {" "}
-                <span className="px-5 -ml-5">
-                  <FiLogIn className="inline-block absolute z-10 text-center mt-1" />
-                </span>
-                Masuk
-              </Link>
+                  <Link
+                    to="/login"
+                    className="shadow-md block text-md w-28 h-10 py-2 -mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
+                  >
+                    {" "}
+                    <span className="px-5 -ml-5">
+                      <FiLogIn className="inline-block absolute z-10 text-center mt-1" />
+                    </span>
+                    Masuk
+                  </Link>
                 </ul>
               </div>
             </button>
