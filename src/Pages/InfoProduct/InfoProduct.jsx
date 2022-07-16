@@ -217,12 +217,12 @@ const InfoProduct = () => {
               <button className="mb-1 w-full h-[48px] shadow appearance-none leading-tight rounded-2xl border-2 border-purple-700 focus:outline-none focus:shadow-outline indent-3 hover:scale-90 focus:bg-neutral-200">
                 <p className="text-black">Preview</p>
               </button>
-              <button
+              {/* <button
                 type="submit"
                 className="mb-1 w-full h-[48px] shadow appearance-none bg-purple-700 leading-tight rounded-2xl border-2 focus:outline-none focus:shadow-outline indent-3 hover:scale-90 focus:bg-purple-500"
               >
                 <p className="text-white">Terbitkan</p>
-              </button>
+              </button> */}
             </div>
           </div>
         </form>

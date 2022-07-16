@@ -23,7 +23,6 @@ import SearchPage from "./Pages/SearchPage/SearchPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from "./Pages/Wishlist/Wishlist";
-import SearchPage from "./Pages/SearchPage/SearchPage";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
