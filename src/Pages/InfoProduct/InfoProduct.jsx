@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../../API";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -43,9 +43,6 @@ const img = {
 
 //reat-select animation
 const animatedComponents = makeAnimated(); //animasi untuk select
-const styleSelect = {
-  width: "full",
-};
 //reat-select animation
 
 const InfoProduct = () => {
