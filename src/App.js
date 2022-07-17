@@ -19,7 +19,6 @@ import Auth from "./Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from "./Pages/Wishlist/Wishlist";
