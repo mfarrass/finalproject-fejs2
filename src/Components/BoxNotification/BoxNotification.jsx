@@ -1,14 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import API from "../../API";
 import moment from "moment";
+import { toast } from "react-toastify";
+
+const redirectLink = (redirect, prod = "") => {
+  if (redirect === "wishlist") {
+    return "/wishlist";
+  } else if (redirect === "allProduct") {
+    return "/seller";
+  } else if (redirect === "interestedProduct") {
+    return "/seller/diminati";
+  } else if (redirect === "detailProduct" && prod) {
+    return `/buyer-product/${prod}`;
+  } else if (redirect === "productSold") {
+    return "/seller/terjual";
+  } else if (redirect === "wishlist") {
+    return "/wishlist";
+  } else {
+    return "/";
+  }
+};
 const BoxNotification = (props) => {
   const [notif, setNotif] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const getNotif = () => {
     setLoading(true);
@@ -27,10 +47,35 @@ const BoxNotification = (props) => {
       });
   };
 
+  const readNotif = (id, red) => {
+    setLoading(true);
+    API.put(
+      `/notifications/${id}/read-notif`,
+      { id: id },
+      {
+        headers: {
+          Authorization: user ? user.access_token : "",
+        },
+      }
+    )
+      .then((res) => {
+        getNotif();
+        toast.success("Notifikasi telah dibaca");
+        navigate(redirectLink(red));
+        setLoading(false);
+      })
+      .catch((err) => {
+        toast.error("Ada Kesalahan dalam notifikasi");
+        setError("Ada Kesalahan dalam notifikasi");
+        console.log(err);
+        setLoading(false);
+      });
+  };
+
   useEffect(() => {
     getNotif();
   }, []);
-  console.log(notif);
+
   return (
     <>
       <div
@@ -38,7 +83,7 @@ const BoxNotification = (props) => {
           props.state ? "sm:block " : "hidden"
         }`}
       >
-        <div className="lg:w-4/5 w-11/12 mx-20 bg-white  rounded-xl border shadow-sm">
+        <div className="lg:w-4/5 w-11/12 mx-20 bg-white flex flex-col rounded-xl border shadow-sm">
           <button
             onClick={() => props.setState(false)}
             className="absolute -mt-3 -ml-2 p-1 text-xs sm:text-sm bg-white text-gray-500 rounded font-medium
@@ -63,7 +108,10 @@ const BoxNotification = (props) => {
             notif.map((item, i) => {
               if (item.NotifactionsInterestedProduct) {
                 return (
-                  <Link key={i} to="/">
+                  <button
+                    key={i}
+                    onClick={() => readNotif(item.id, item.Redirect)}
+                  >
                     <div className="mt-1 px-6 py-3 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500 rounded-lg shadow w-full">
                       <div className=" inline-flex items-center justify-between w-full">
                         <div className="inline-flex items-center">
@@ -88,7 +136,6 @@ const BoxNotification = (props) => {
                         {item.NotifactionsInterestedProduct.Product.name}
                       </p>
                       <p className="mt-1 text-xs">
-                        Rp{" "}
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
                           currency: "IDR",
@@ -106,7 +153,43 @@ const BoxNotification = (props) => {
                         )}{" "}
                       </p>
                     </div>
-                  </Link>
+                  </button>
+                );
+              } else if (item.NotifactionsProduct) {
+                return (
+                  <button
+                    key={i}
+                    onClick={() => readNotif(item.id, item.Redirect)}
+                  >
+                    <div className="mt-1 px-6 py-3 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500 rounded-lg shadow w-full">
+                      <div className=" inline-flex items-center justify-between w-full">
+                        <div className="inline-flex items-center">
+                          <img
+                            src={item.NotifactionsProduct.ProductImage[0].image}
+                            alt="Training Icon"
+                            className="w-6 h-6 mr-3 hover:scale-125 ease-in duration-100"
+                          />
+                          <p className="text-xs text-gray-500">{item.status}</p>
+                        </div>
+                        <p className="text-xs text-gray-500">
+                          {moment(item.createdAt)
+                            .locale("id")
+                            .format("MMMM Do YYYY")}
+                        </p>
+                        <span className="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
+                      </div>
+                      <p className="mt-1 text-xs">
+                        {item.NotifactionsProduct.name}
+                      </p>
+                      <p className="mt-1 text-xs">
+                        {" "}
+                        {new Intl.NumberFormat("id-ID", {
+                          style: "currency",
+                          currency: "IDR",
+                        }).format(item.NotifactionsProduct.price)}
+                      </p>
+                    </div>
+                  </button>
                 );
               }
             })}

@@ -53,7 +53,7 @@ function App() {
               path="/buyer-product/:productId"
               element={<HalamanProduct />}
             />
-            <Route path="/preview" element={<Preview />} />
+            <Route path="/preview/:prodId" element={<Preview />} />
             <Route path="/notifikasi" element={<NotifikasiDesktop />} />
             <Route path="/seller-tawar/:idTawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
@@ -63,6 +63,7 @@ function App() {
               <Route path="diminati" element={<Diminati />} />
             </Route>
             <Route path="wishlist" element={<Wishlist />} />
+            <Route path="search" element={<SearchPage />} />
           </Route>
         </Route>
       </Routes>
