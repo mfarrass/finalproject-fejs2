@@ -9,11 +9,22 @@ import { GiExitDoor } from "react-icons/gi";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 import DropDownIcon from "../DropDownIcon/DropDownIcon";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggleNotif, setToggleNotif] = useState(false);
   const [toggleProfile, setToggleProfile] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (search.length > 0) {
+      navigate("/search/" + search);
+    } else {
+      toast.warning("Silahkan isi kolom pencarian terlebih dahulu");
+    }
+  };
 
   return (
     <>
@@ -44,10 +55,12 @@ const Navbar = () => {
                     name="name"
                     className="shadow-md border-gray-300 bg-gray-100 w-full md:w-auto h-10 pl-4 pr-14 border-0 rounded-xl text-sm focus:outline-none"
                     placeholder="Cari di sini ..."
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
                   />
                   <button
-                    type="submit"
                     className="absolute right top-0 mt-3 -ml-8 "
+                    onClick={handleSearch}
                   >
                     <BsSearch className="text-gray-600 hover:text-purple-700 h-4 w-4 fill-current" />
                   </button>

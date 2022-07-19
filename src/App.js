@@ -13,12 +13,13 @@ import HalamanProduct from "./Pages/Buyer/HalamanProduct";
 import SellerTawar from "./Pages/SellerTawar/SellerTawar";
 import Home from "./Pages/Home/Home";
 import NavbarIcon from "./Components/NavbarIcon/NavbarIcon";
-import NotifikasiDesktop from "./Pages/NotiifikasiDesktop/NotifikasiDesktop";
+import NotifikasiDesktop from "./Pages/NotifikasiDesktop/NotifikasiDesktop";
 // import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import Auth from "./Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import authSlice from "./Features/authSlice";
 import Navbar from "./Components/Navbar/Navbar";
+import SearchPage from "./Pages/SearchPage/SearchPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from "./Pages/Wishlist/Wishlist";
@@ -42,7 +43,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/daftar" element={<Daftar />} />
+
         <Route path="" element={user ? <NavbarIcon /> : <Navbar />}>
+          <Route path="/search/:keyword" element={<SearchPage />} />
           <Route path="/" element={<Home />} />
           <Route element={<Auth />}>
             <Route path="/info-profil" element={<InfoProfil />} />
@@ -52,7 +55,6 @@ function App() {
             />
             <Route path="/preview" element={<Preview />} />
             <Route path="/notifikasi" element={<NotifikasiDesktop />} />
-
             <Route path="/seller-tawar/:idTawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
             <Route path="/seller" element={<Seller />}>
