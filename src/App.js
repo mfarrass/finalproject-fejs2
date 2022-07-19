@@ -55,7 +55,6 @@ function App() {
             />
             <Route path="/preview/:prodId" element={<Preview />} />
             <Route path="/notifikasi" element={<NotifikasiDesktop />} />
-
             <Route path="/seller-tawar/:idTawar" element={<SellerTawar />} />
             <Route path="/info-product" element={<InfoProduct />} />
             <Route path="/seller" element={<Seller />}>
