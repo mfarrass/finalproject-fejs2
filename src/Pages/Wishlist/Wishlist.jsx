@@ -22,13 +22,17 @@ export default function Wishlist(props) {
     })
       .then((res) => {
         setLoading(false);
-        setWishlist(res.data.data);
+        setWishlist(res.data.data.listWishlist);
       })
       .catch((err) => {
         setLoading(false);
         if (err.response.status === 404) {
           setMessage("Belum ada wishlist");
+
           toast.warning("Belum ada wishlist");
+        } else {
+          setError("Ada Kesalahan Saat Pengambilan Data");
+          toast.error("Ada Kesalahan Saat Pengambilan Data");
         }
       });
   }, []);
