@@ -136,11 +136,7 @@ const BoxNotification = (props) => {
                       <p className="mt-1 text-xs">
                         {item.NotifactionsInterestedProduct.Product.name}
                       </p>
-<<<<<<< HEAD
-                      <p className="t-1 text-xs">
-=======
                       <p className="mt-1 text-xs text-start">
->>>>>>> 6a726d8aa9fb4c3b8c3e2969a8dd00f41bd5ea14
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
                           currency: "IDR",
@@ -148,11 +144,8 @@ const BoxNotification = (props) => {
                           item.NotifactionsInterestedProduct.Product.price
                         )}
                       </p>
-<<<<<<< HEAD
-                      <p className="t-1 text-xs">
-=======
+                      <p className="t-1 text-xs"></p>
                       <p className="mt-1 text-xs text-start">
->>>>>>> 6a726d8aa9fb4c3b8c3e2969a8dd00f41bd5ea14
                         Ditawar{" "}
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
@@ -192,11 +185,8 @@ const BoxNotification = (props) => {
                         {item.NotifactionsProduct.name}
                       </p>
                       <p className="mt-1 text-xs text-start">
-<<<<<<< HEAD
                         {" "} 
-=======
                         {" "}
->>>>>>> 6a726d8aa9fb4c3b8c3e2969a8dd00f41bd5ea14
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
                           currency: "IDR",

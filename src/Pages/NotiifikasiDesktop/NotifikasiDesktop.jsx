@@ -78,14 +78,14 @@ const NotifikasiDesktop = () => {
   }, []);
   return (
     <>
-      <button
+      <div className="6 z-auto right-0 py-7 mt-28 top-0 bg-white h-screen place-items-center">
+        <div className="lg:w-4/5 w-11/12 mx-auto bg-white  rounded-xl border shadow-sm">
+        <button
         onClick={() => navigate(-1)}
-        className="-mt-5 pl-5 absolute hover:text-purple-700 "
+        className="-mt-10 pl-4 absolute hover:text-purple-700"
       >
         <BiArrowBack className="w-6 h-6 focus:outline-none transform active:scale-50 transition-transform duration-300 shadow-sm" />
       </button>
-      <div className="6 z-auto right-0 py-7 mt-28 top-0 bg-white  h-screen place-items-center">
-        <div className="lg:w-4/5 w-11/12 mx-auto bg-white  rounded-xl border shadow-sm">
           {loading && !error && <LoadingSpinner />}
           {!loading &&
             !error &&
@@ -96,11 +96,12 @@ const NotifikasiDesktop = () => {
                   <button
                     key={i}
                     onClick={() => readNotif(item.id, item.Redirect)}
+                    className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full"
                   >
-                    <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
+                    <div>
                       <div className=" inline-flex items-center justify-between w-full">
                         <div className="inline-flex items-center">
-                          <im g
+                          <img
                             src={
                               item.NotifactionsInterestedProduct.Product
                                 .ProductImage[0].image
@@ -145,19 +146,20 @@ const NotifikasiDesktop = () => {
                               .locale("id")
                               .format("MMMM Do YYYY")}
                           </p>
-                          <span className="rounded-full w-2 h-2 bg-red-500"></span>
+                          <span className="rounded-full w-1 h-1 bg-red-500 sm:bg-white"></span>
                         </div>
                       </div>
                     </div>
                   </button>
-                );
+                  );
               } else if (item.NotifactionsProduct) {
                 return (
                   <button
                     key={i}
                     onClick={() => readNotif(item.id, item.Redirect)}
+                    className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full"
                   >
-                    <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
+                    <div>
                       <div className=" inline-flex items-center justify-between w-full">
                         <div className="inline-flex items-center">
                           <img
@@ -165,13 +167,13 @@ const NotifikasiDesktop = () => {
                             alt="Training Icon"
                             className="w-16 h-16 rounded-lg mr-3 hover:scale-125 ease-in duration-100"
                           />
-                          <div className="text-xs text-gray-500 mt-4">
+                          <div className="text-start text-xs text-gray-500 mt-4">
                             {item.status}
                             <ul className="mt-2">
-                              <li className="text-base text-black">
+                              <li className="text-start text-base text-black">
                                 {item.NotifactionsProduct.name}
                               </li>
-                              <li className="text-sm text-black">
+                              <li className="text-start text-sm text-black">
                                 {new Intl.NumberFormat("id-ID", {
                                   style: "currency",
                                   currency: "IDR",
@@ -186,7 +188,7 @@ const NotifikasiDesktop = () => {
                               .locale("id")
                               .format("MMMM Do YYYY")}
                           </p>
-                          <span class="rounded-full w-2 h-2 bg-red-500"></span>
+                          <span className="rounded-full w-1 h-1 bg-red-500 sm:block hidden"></span>
                         </div>
                       </div>
                     </div>
