@@ -54,7 +54,7 @@ const NotifikasiDesktop = () => {
                     <div className="mt-1 px-6 py-3 bg-white hover:bg-gray-100 rounded-lg shadow w-full">
                       <div className=" inline-flex items-center justify-between w-full">
                         <div className="inline-flex items-center">
-                          <img
+                          <im g
                             src={
                               item.NotifactionsInterestedProduct.Product
                                 .ProductImage[0].image

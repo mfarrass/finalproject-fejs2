@@ -132,10 +132,11 @@ const BoxNotification = (props) => {
                         </p>
                         <span className="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
                       </div>
+                      <div className="flex justify-start">
                       <p className="mt-1 text-xs">
                         {item.NotifactionsInterestedProduct.Product.name}
                       </p>
-                      <p className="mt-1 text-xs">
+                      <p className="t-1 text-xs">
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
                           currency: "IDR",
@@ -143,7 +144,7 @@ const BoxNotification = (props) => {
                           item.NotifactionsInterestedProduct.Product.price
                         )}
                       </p>
-                      <p className="mt-1 text-xs">
+                      <p className="t-1 text-xs">
                         Ditawar{" "}
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
@@ -152,6 +153,7 @@ const BoxNotification = (props) => {
                           item.NotifactionsInterestedProduct.price
                         )}{" "}
                       </p>
+                    </div>
                     </div>
                   </button>
                 );
@@ -162,7 +164,7 @@ const BoxNotification = (props) => {
                     onClick={() => readNotif(item.id, item.Redirect)}
                   >
                     <div className="mt-1 px-6 py-3 bg-white hover:bg-gradient-to-l from-gray-200 to-white hover:bg-gray-500 rounded-lg shadow w-full">
-                      <div className=" inline-flex items-center justify-between w-full">
+                      <div className="inline-flex items-center justify-between w-full">
                         <div className="inline-flex items-center">
                           <img
                             src={item.NotifactionsProduct.ProductImage[0].image}
@@ -175,14 +177,14 @@ const BoxNotification = (props) => {
                           {moment(item.createdAt)
                             .locale("id")
                             .format("MMMM Do YYYY")}
-                        </p>
+                        </p> 
                         <span className="rounded-full -ml-6 w-2 h-2 bg-red-500"></span>
                       </div>
-                      <p className="mt-1 text-xs">
+                      <p className="mt-1 text-xs text-start">
                         {item.NotifactionsProduct.name}
                       </p>
-                      <p className="mt-1 text-xs">
-                        {" "}
+                      <p className="mt-1 text-xs text-start">
+                        {" "} 
                         {new Intl.NumberFormat("id-ID", {
                           style: "currency",
                           currency: "IDR",
