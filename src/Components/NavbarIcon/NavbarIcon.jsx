@@ -10,13 +10,14 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import BoxNotification from "../../Components/BoxNotification/BoxNotification";
 import DropDownIcon from "../DropDownIcon/DropDownIcon";
 import { toast } from "react-toastify";
-
+import { useDispatch } from "react-redux";
+import authSlice from "../../Features/authSlice";
 const Navbar = () => {
   const navigate = useNavigate();
   const [toggleNotif, setToggleNotif] = useState(false);
   const [toggleProfile, setToggleProfile] = useState(false);
   const [search, setSearch] = useState("");
-
+  const dispatch = useDispatch();
   const handleSearch = (e) => {
     e.preventDefault();
     if (search.length > 0) {
@@ -133,7 +134,7 @@ const Navbar = () => {
                 className="absolute top-0 -right-full h-screen w-8/12 bg-white border opacity-0
             group-focus:right-0 group-focus:opacity-100 transition-all duration-300 z-40"
               >
-                <div className="m-5">
+                {/* <div className="m-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 border-slate-100 focus:outline-none transform active:scale-50 transition-transform duration-300 shadow-sm hover:text-purple-700"
@@ -146,39 +147,41 @@ const Navbar = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                </div>
+                </div> */}
                 <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-6">
                   <div className="flex flex-col items-center w-32 mx-5">
-                    <img src="/Imgs/second-hand-logo2.png" alt="logo" />
+                    <Link to="/">
+                      <img src="/Imgs/second-hand-logo2.png" alt="logo" />
+                    </Link>
                   </div>
                 </ul>
 
                 <ul className="inline flex-col items-center text-black w-full text-base cursor-pointer pt-10 ">
                   <li className="my-3 hover:bg-purple-700 hover:text-white">
-                    Produk
+                    <Link to="/seller">Produk</Link>
                   </li>
                   <li className="mb-3 hover:bg-purple-700 hover:text-white">
-                    Notifikasi
+                    <Link to="notifikasi">Notifikasi</Link>
                   </li>
                   <li className="mb-3 hover:bg-purple-700 hover:text-white">
-                    Akun
+                    <Link to="/info-profil">Akun</Link>
                   </li>
                   <li className="mb-3 hover:bg-purple-700 hover:text-white">
-                    Wistlist
+                    <Link to="/wishlist">Wishlist</Link>
                   </li>
                 </ul>
-                
+
                 <ul className="relative flex justify-center w-full text-base cursor-pointer pt-10">
-                <Link
-                to="/"
-                className="shadow-md block text-md w-28 h-10 py-2 -mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
-              >
-                {" "}
-                <span className="px-5 -ml-5">
-                  <GiExitDoor className="inline-block absolute z-10 text-center mt-1" />
-                </span>
-                Logout
-              </Link>
+                  <button
+                    onClick={() => dispatch(authSlice.actions.logout())}
+                    className="shadow-md block text-md w-28 h-10 py-2 -mx-2 text-white hover:text-gray-700 rounded-lg bg-purple-700 hover:text-white hover:bg-purple-200 hover:font-bold lg:mt-0 focus:outline-none transform active:scale-50 transition-transform duration-300"
+                  >
+                    {" "}
+                    <span className="px-5 -ml-5">
+                      <GiExitDoor className="inline-block absolute z-10 text-center mt-1" />
+                    </span>
+                    Logout
+                  </button>
                 </ul>
               </div>
             </button>
