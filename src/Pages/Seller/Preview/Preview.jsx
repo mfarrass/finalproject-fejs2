@@ -134,12 +134,9 @@ const Preview = () => {
                           <>
                             <button
                               onClick={handleTerbitkan}
-                              className="w-[304px] h-[48px] rounded-xl invisible md:visible mt-10 px-3.5 hover:bg-purple-400 focus:scale-90 bg-purple-700 text-white"
+                              className="w-[304px] h-[48px] mb-5 rounded-xl invisible md:visible mt-10 px-3.5 hover:bg-purple-400 focus:scale-90 bg-purple-700 text-white"
                             >
                               Terbitkan
-                            </button>
-                            <button className="w-[304px] h-[48px] rounded-xl invisible md:visible my-4 px-3.5 hover:bg-slate-300 focus:scale-90 bg-purple-white text-purple-700 border-2 border-purple-700">
-                              Edit
                             </button>
                           </>
                         )}
