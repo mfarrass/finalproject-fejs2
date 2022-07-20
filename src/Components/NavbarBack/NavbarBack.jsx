@@ -16,7 +16,7 @@ const NavbarBack = (props) => {
           <AiOutlineArrowLeft size={42} />
         </button>
       </div>
-      <div className="md:hidden  flex justify-center font-bold -mt-7 mb-5">
+      <div className="md:hidden flex justify-center font-bold -mt-7 mb-5">
         <p>{props.children}</p>
       </div>
     </>

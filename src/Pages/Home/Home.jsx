@@ -1,14 +1,13 @@
 import React from "react";
-
 import Banner from "./Components/Banner";
 import ButtonCategory from "./Components/ButtonCategory";
-import ProductCard from "./Components/ProductCard";
+// import ProductCard from "./Components/ProductCard";
 import ButtonAdd from "./Components/ButtonAdd";
 import Footer from "../../Components/Footer/Footer";
 import Card from "../../Components/Card/Card";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector, useReducer } from "react-redux";
+import { useSelector } from "react-redux";
 import API from "../../API";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import ErrorAlert from "../../Components/ErrorAlert/ErrorAlert";
@@ -66,7 +65,7 @@ const Home = () => {
               {error ? (
                 <ErrorAlert>{error}</ErrorAlert>
               ) : (
-                <div className="my-6 pb-6 grid grid-cols-2 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3">
+                <div className="my-6 pb-20 grid grid-cols-2 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3">
                   {products.map((product, i) => (
                     <Card
                       key={i}
@@ -76,13 +75,16 @@ const Home = () => {
                         (category, i) => `${category.Category.name} `
                       )}
                       harga={product.price}
-                      img={product.ProductImage[0].image}
+                      img={
+                        product.ProductImage.length === 0
+                          ? "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
+                          : product.ProductImage[0].image
+                      }
                     />
                   ))}
                 </div>
               )}
             </div>
-            {/* <BoxNotification /> */}
             {!error && <ButtonAdd />}
             <Footer />
           </div>
