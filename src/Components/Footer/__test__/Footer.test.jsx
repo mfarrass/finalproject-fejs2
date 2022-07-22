@@ -1,12 +1,11 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
-// import { Footer } from '../Footer';
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import Footer from "../Footer";
 
-// it("should render project by", () => {
-//     const wrapper = shallow(<Footer />);
-//     const span = wrapper.find("span");
-//     const result = span.text();
-
-//     expect(result).toBe("© FINAL PROJECT FEJS2 x BEJS2 - KEL 1");
-// });
-
+test("Testing Footer Text", () => {
+render(<Footer />);
+const linkElement= screen.getByText(
+    /© FINAL PROJECT FEJS2 x BEJS2 - KEL 1/i
+);
+expect(linkElement).toBeInTheDocument();
+});
