@@ -33,6 +33,7 @@ const Produk = () => {
         toast.error("Ada Kesalahan Dalam Pengambilan Data");
       });
   }, []);
+
   return (
     <>
       {isLoading && !error && <LoadingSpinner />}
@@ -62,6 +63,9 @@ const Produk = () => {
               )}
               harga={product.price}
               img={product.ProductImage[0].image}
+              soldAt={product.soldAt}
+              publish={product.publish}
+              id={product.id}
             />
           ))}
         </div>

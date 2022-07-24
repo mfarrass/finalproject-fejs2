@@ -57,6 +57,10 @@ const Preview = () => {
       });
   };
 
+  const deleteProduct = () => {
+    console.log("Delete Product");
+  };
+
   return (
     <>
       {error && !loading && (
@@ -133,10 +137,20 @@ const Preview = () => {
                         ) : (
                           <>
                             <button
+                              disabled={product.publish}
                               onClick={handleTerbitkan}
-                              className="w-[304px] h-[48px] mb-5 rounded-xl invisible md:visible mt-10 px-3.5 hover:bg-purple-400 focus:scale-90 bg-purple-700 text-white"
+                              className="w-[304px] h-[48px] mb-5 rounded-xl invisible md:visible mt-10 px-3.5 hover:bg-purple-400 focus:scale-90 bg-purple-700 text-white disabled:bg-purple-200"
                             >
                               Terbitkan
+                            </button>
+                            <button
+                              // disabled={product.publish}
+                              onClick={() => {
+                                deleteProduct(product.id);
+                              }}
+                              className="w-[304px] h-[48px] mb-5 rounded-xl invisible md:visible  hover:bg-red-400 focus:scale-90 bg-red-700 text-white disabled:bg-red-200"
+                            >
+                              Hapus
                             </button>
                           </>
                         )}
@@ -177,11 +191,19 @@ const Preview = () => {
             </div>
             {/**button untuk mobile */}
             <div className="sticky bottom-10 flex justify-center">
-              <button className="mx-4 mt-4 text-white w-full h-[48px] rounded-2xl bg-purple-600 md:hidden">
+              <button
+                disabled={product.publish}
+                className="mx-4 mt-4 disabled:bg-purple-200 text-white w-full h-[48px] rounded-2xl bg-purple-600 md:hidden"
+              >
                 Terbitkan
               </button>
-              <button className="mx-4 mt-4 text-purple-700 border-2 border-purple-700 w-full h-[48px] rounded-2xl bg-white md:hidden">
-                Edit
+              <button
+                onClick={() => {
+                  deleteProduct(product.id);
+                }}
+                className="mx-4 mt-4 text-red-700 border-2 border-red-700 w-full h-[48px] rounded-2xl bg-white md:hidden"
+              >
+                Hapus
               </button>
             </div>
           </div>

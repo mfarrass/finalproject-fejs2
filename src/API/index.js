@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://second-hand-staging.herokuapp.com/",
+  baseURL: process.env.REACT_APP_API,
 });
 
 export default API;

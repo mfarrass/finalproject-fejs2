@@ -30,6 +30,7 @@ const Login = () => {
       navigate(from, { replace: true });
     }
   });
+
   return (
     <div className="md:grid md:grid-cols-2  w-screen h-screen overflow-hidden">
       <div className="col-span-1 bg-login bg-cover"></div>

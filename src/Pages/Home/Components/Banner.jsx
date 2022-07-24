@@ -22,13 +22,13 @@ const Banner = () => {
         autoplay={true}
       >
         <SwiperSlide>
-          <img src="/Imgs/idul-adha.png" alt="" />
+          <img src="/Imgs/idul-adha.png" alt="Banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/Imgs/banner-tengah.png" alt="" />
+          <img src="/Imgs/banner-tengah.png" alt="Banner" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/Imgs/Imlek.png" alt="" />
+          <img src="/Imgs/Imlek.png" alt="Banner" />
         </SwiperSlide>
       </Swiper>
     </div>

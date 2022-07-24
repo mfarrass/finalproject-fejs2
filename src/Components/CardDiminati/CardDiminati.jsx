@@ -28,6 +28,7 @@ const CardDiminati = (props) => {
             currency: "IDR",
           }).format(props.hargaTawar)}
         </h2>
+       
       </div>
     </div>
   );
