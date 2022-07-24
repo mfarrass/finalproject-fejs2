@@ -1,27 +1,26 @@
-// import { Login } from '../Login'
-// import * as ReactDOM from 'react-dom'
+// import React from 'react'
+// import { render, screen } from "@testing-library/react"
+// import Login from "../Login"
 
-
-// describe('Login component test', () => {
-
-//     let container =  HTMLDivElement
-
-//     beforeEach(()=>{
-//         container = document.createElement('div');
-//         document.body.appendChild(container);
-//         ReactDOM.render(<Login />, container);
-//     })
-
-//     afterEach(() =>{
-//         document.body.removeChild(container);
-//         container.remove();
-//     })
-
-//     it('Render correcly initial document', ()=>{
-//         const inputs = container.querySelectorAll('input');
-//         expect(inputs). toHaveLength(2);
-//         expect(inputs[0].name).toBe('email')
-//         expect(inputs[1].name).toBe('password')
-//     })
-
+// test("email input should be rendered" , ()=>{
+//     render(<Login />);
+//     const userInputEl = screen.getByPlaceholderText(/Contoh: johndee@gmail.com/i);
+//     expect(userInputEl).toBeInTheDocument()
 // })
+// test("password input should be rendered" , ()=>{
+//     render(<Login />);
+//     const passwordInputEl = screen.getByPlaceholderText(/Contoh: johndee@gmail.com/i);
+//     expect(passwordInputEl).toBeInTheDocument()
+// })
+// test("button input should be rendered" , ()=>{
+//     render(<Login />);
+//     const buttonInputEl = screen.getByRole("button");
+//     expect(buttonInputEl).toBeInTheDocument()
+// })
+
+
+
+
+// // menit 21
+// // https://www.youtube.com/watch?v=Flo268xRpV0
+
