@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import API from "../../API";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { type } from "@testing-library/user-event/dist/type";
-import { Navigate } from "react-router-dom";
+// import { type } from "@testing-library/user-event/dist/type";
+// import { Navigate } from "react-router-dom";
 
 const InfoProfil = () => {
   const { user } = useSelector((state) => state.auth);
